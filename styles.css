@@ -364,4 +364,13 @@ h1 {
   border-top: 0.5px solid var(--border);
   padding-top: 32px;
   margin-top: 8px;
+}/* ---- Depoimentos — variação por origem ---- */
+.testimonial.arkhe {
+  border-left: 2px solid var(--gold);
 }
+.testimonial.tarot {
+  border-left: 2px solid var(--violet);
+}
+.testimonial.arkhe p.who { color: var(--gold-text); }
+.testimonial.tarot p.who { color: var(--violet-text); }
+
