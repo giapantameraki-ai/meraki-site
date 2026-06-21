@@ -73,7 +73,9 @@ img { max-width: 100%; display: block; }
 .nav-links {
   display: flex;
   gap: 24px;
-  font-size: 13px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 .nav-links a {
   color: var(--text-secondary);
