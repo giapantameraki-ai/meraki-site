@@ -290,7 +290,7 @@ h1 {
 }
 .home-grid > div:first-child { border-right: 0.5px solid var(--border); }
 .home-card-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 12px; }
-.home-card-tagline { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 18px; }
+.home-card-tagline { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 18px; text-align: justify; }
 .home-card-link { font-size: 13px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
 
 @media (max-width: 600px) {
