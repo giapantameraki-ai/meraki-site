@@ -1,0 +1,12 @@
+/* ---- Depoimentos — variação por origem ---- */
+/* Adicione este trecho ao FINAL do seu styles.css existente. */
+/* Não substitua o arquivo inteiro — apenas acrescente isto no fim. */
+
+.testimonial.arkhe {
+  border-left: 2px solid var(--gold);
+}
+.testimonial.tarot {
+  border-left: 2px solid var(--violet);
+}
+.testimonial.arkhe p.who { color: var(--gold-text); }
+.testimonial.tarot p.who { color: var(--violet-text); }
