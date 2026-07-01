@@ -374,3 +374,76 @@ h1 {
 .testimonial.arkhe p.who { color: var(--gold-text); }
 .testimonial.tarot p.who { color: var(--violet-text); }
 
+/* ---- Vestígios — listagem ---- */
+.vestigios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.vestigio-item {
+  display: block;
+  padding: 24px 0;
+  border-bottom: 0.5px solid var(--border);
+  transition: opacity 0.15s ease;
+}
+.vestigio-item:hover { opacity: 0.8; }
+.vestigio-item:first-child { padding-top: 0; }
+.vestigio-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+.vestigio-categoria {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--violet-text);
+}
+.vestigio-categoria.gold { color: var(--gold); }
+.vestigio-data {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.vestigio-item h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin: 0 0 8px;
+  text-align: left;
+  max-width: none;
+}
+.vestigio-resumo {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 620px;
+}
+
+/* ---- Vestígios — artigo individual ---- */
+.vestigio-article .eyebrow { text-align: left; margin: 0 0 16px; }
+.vestigio-article h1 {
+  text-align: left;
+  margin: 0 0 14px;
+  max-width: 600px;
+  font-size: 30px;
+}
+.vestigio-article .vestigio-meta { margin: 0 0 32px; }
+.vestigio-article .prose p {
+  max-width: 620px;
+  font-size: 14.5px;
+}
+.vestigio-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin: 40px 0 0;
+}
+.vestigio-voltar:hover { color: var(--gold); }
+
