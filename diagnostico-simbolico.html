@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --preto:#0F0E0A; --preto-2:#17150F; --dourado:#C9A35E; --violeta:#9B7FB8;
+    --preto:#0F0E0A; --preto-2:#17150F; --dourado:#C9A35E; --violeta:#9B7FB8; --terracota:#9B5B4A;
     --texto:#EDE7DA; --texto-suave:#B9B2A3; --linha:#2A2720;
   }
   *{box-sizing:border-box;}
@@ -55,13 +55,14 @@
   .passo-txt b{color:var(--texto);font-weight:500;display:block;margin-bottom:.3rem;}
   .passo-txt p{margin:0;font-size:.98rem;}
 
-  .para-quem{display:grid;grid-template-columns:1fr;gap:2rem;}
+  .para-quem{display:grid;grid-template-columns:1fr;gap:1.4rem;}
   @media(min-width:640px){.para-quem{grid-template-columns:1fr 1fr;}}
-  .coluna h3{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;color:var(--dourado);}
-  .coluna.nao h3{color:var(--texto-suave);}
-  .coluna ul{list-style:none;padding:0;margin:0;display:grid;gap:.8rem;}
-  .coluna li{font-size:.95rem;color:var(--texto-suave);padding-left:1.2rem;position:relative;}
-  .coluna li::before{content:"·";position:absolute;left:0;}
+  .coluna{text-align:center;padding:2rem 1.6rem;border:1px solid var(--linha);border-radius:2px;border-top:2px solid var(--dourado);background:rgba(201,163,94,.04);}
+  .coluna.nao{border-top:2px solid var(--terracota);background:rgba(155,91,74,.06);}
+  .coluna h3{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.4rem;color:var(--dourado);}
+  .coluna.nao h3{color:var(--terracota);}
+  .coluna ul{list-style:none;padding:0;margin:0;display:grid;gap:1rem;}
+  .coluna li{font-size:.95rem;color:var(--texto-suave);line-height:1.55;}
 
   .oferta{text-align:center;background:linear-gradient(180deg,var(--preto-2),var(--preto));}
   .preco{font-family:'Cormorant Garamond',serif;font-size:3.2rem;color:var(--dourado);font-style:italic;margin:1rem 0;}
@@ -166,7 +167,7 @@
   <h2>Para quem é</h2>
   <div class="para-quem">
     <div class="coluna sim">
-      <h3>Faz sentido se você</h3>
+      <h3>Faz sentido, se você:</h3>
       <ul>
         <li>Está chegando agora no universo ARKHÉ e quer sentir o método inteiro antes de decidir se quer ir mais fundo</li>
         <li>Tem uma questão específica e real, não curiosidade genérica sobre o próprio mapa</li>
@@ -174,7 +175,7 @@
       </ul>
     </div>
     <div class="coluna nao">
-      <h3>Não é pra agora se você</h3>
+      <h3>Ainda não, se você:</h3>
       <ul>
         <li>Já é cliente da escada ARKHÉ e busca profundidade maior — o Veredito ou a Fratura vão mais fundo</li>
         <li>Quer só uma tiragem de Tarô pontual, sem camada astrológica ou simbólica</li>
