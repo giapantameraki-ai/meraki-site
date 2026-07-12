@@ -92,29 +92,9 @@
   .pilar[data-pilar="mitologia"] .pilar-nome{color:var(--terracota);}
   .pilar p{font-size:.96rem;color:var(--texto-suave);margin:0 0 1rem;}
 
-  .imagem-verbete{
-    position:relative;
-    width:100%;
-    max-width:340px;
-    aspect-ratio:4/5;
-    margin:1.6rem 0 .4rem;
-    overflow:hidden;
-    -webkit-mask-image:radial-gradient(ellipse 80% 80% at center, #000 55%, transparent 100%);
-    mask-image:radial-gradient(ellipse 80% 80% at center, #000 55%, transparent 100%);
-  }
-  .imagem-verbete img{
-    width:100%;height:100%;object-fit:cover;display:block;
-    animation:kenburns 22s ease-in-out infinite alternate;
-    filter:saturate(.92) contrast(1.02);
-  }
-  @keyframes kenburns{
-    0%{transform:scale(1) translate(0,0);}
-    100%{transform:scale(1.09) translate(-1%,-1%);}
-  }
-  @media (prefers-reduced-motion:reduce){.imagem-verbete img{animation:none;}}
-  .prompt-imagem{margin-top:1rem;padding:1.4rem 1.6rem;background:rgba(201,163,94,.06);border:1px dashed var(--dourado);border-radius:2px;}
-  .prompt-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:.5rem;}
-  .prompt-imagem p{font-size:.85rem;color:var(--texto-suave);font-style:italic;margin:0;}
+  .imagem-verbete-wrap{max-width:340px;margin:1.6rem auto .4rem;}
+  .imagem-verbete-wrap .edge-fade-frame{border-radius:2px;}
+  .imagem-verbete-wrap img{aspect-ratio:4/5;object-fit:cover;}
 
   .nota-arquitetura{max-width:900px;margin:0 auto;padding:0 6vw 6rem;font-size:.85rem;color:var(--texto-suave);border-top:1px solid var(--linha);padding-top:3rem;}
 </style>
@@ -168,8 +148,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/serpente.png" alt="A Serpente — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/serpente.png" alt="A Serpente — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -207,11 +189,6 @@
         <p>No hinduísmo, Ananta-Shesha, a serpente infinita, sustenta o próprio Vishnu flutuando sobre as águas primordiais entre um universo e o seguinte — não ameaça, mas fundamento literal da existência. Na mitologia nórdica, Jörmungandr circula o mundo inteiro mordendo a própria cauda no fundo do oceano, e sua morte, no Ragnarök, é também o gatilho do fim de tudo: a serpente que sustenta o mundo é a mesma que, ao se romper, o destrói. Na Mesoamérica, a serpente muda de função outra vez: Quetzalcoatl, entre os astecas, e Kukulcán, entre os maias, é serpente emplumada — deus do vento, da aprendizagem, um dos criadores do mundo, não sua ameaça. Três civilizações sem contato entre si escolhem a mesma criatura para guardar o ponto mais alto e mais baixo da cosmologia.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato, fundo de mármore escuro quase preto com veios sutis. Uma serpente estilizada em traço único contínuo — glifo gravado, não animal naturalista. Luz rasante lateral, como relevo de templo antigo fotografado de perto. Paleta: preto mármore, dourado envelhecido (#C9A35E), leves toques de bronze. Sem moldura decorativa, sem fundo de floresta ou jardim, sem iconografia religiosa explícita. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -228,8 +205,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/espelho.png" alt="O Espelho — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/espelho.png" alt="O Espelho — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -267,11 +246,6 @@
         <p>No xintoísmo japonês, a deusa do sol Amaterasu se esconde numa caverna, mergulhando o mundo em escuridão, e só é atraída para fora ao ver o próprio reflexo brilhando num espelho de bronze — o Yata no Kagami, hoje um dos três tesouros sagrados da família imperial japonesa. Entre os astecas, Tezcatlipoca, “Espelho Fumegante”, carrega um disco de obsidiana polida usado para adivinhação e para revelar a natureza oculta de quem nele se olhasse. Duas mitologias sem contato entre si escolhem o espelho como instrumento literal de autoencontro divino.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: um disco de bronze antigo, sem moldura decorativa, refletindo apenas um borrão dourado indefinido — nunca um rosto nítido. Fundo de mármore escuro quase preto com veios sutis. Paleta estritamente preto mármore e dourado envelhecido (#C9A35E), sem outras cores, sem névoa colorida ao redor do disco. Sem iconografia religiosa explícita, sem moldura ornamentada. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -288,8 +262,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/labirinto.png" alt="O Labirinto — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/labirinto.png" alt="O Labirinto — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -327,11 +303,6 @@
         <p>Heródoto descreve um labirinto egípcio junto ao lago Méris, próximo a Hawara, com milhares de câmaras — parte real, parte lenda já na Antiguidade. No Hopi, o símbolo Tápu'at, “Mãe e Filho”, desenha um labirinto unicursal que representa o caminho de emergência da humanidade saindo do mundo inferior para este — a mesma forma que na Grécia guarda um monstro, entre os Hopi guarda um nascimento.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: espiral única, sem bifurcações, traçada em fio dourado fino sobre mármore escuro quase preto — geometria pura, sem parede de pedra ou referência a labirinto turístico. Leve brilho ao centro da espiral. Sem criaturas, sem figuras humanas. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -348,8 +319,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/arvore.png" alt="A Árvore — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/arvore.png" alt="A Árvore — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -387,11 +360,6 @@
         <p>Dafne, ninfa perseguida por Apolo, pede socorro ao próprio pai, o deus-rio Peneu, e é transformada em loureiro no instante exato em que seria alcançada — a árvore, ali, não é destino: é fuga bem-sucedida, o único jeito de escapar que a mitologia grega concede a uma mulher encurralada. Apolo passa a usar louros como coroa para sempre, carregando no próprio símbolo de vitória a lembrança de uma recusa.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: um único galho cortado, ainda brotando folhas novas na ponta. Traço fino, dourado sobre mármore escuro quase preto. Sem raízes visíveis, sem copa completa — só o galho e o broto novo. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -408,8 +376,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/arvore-da-vida.png" alt="A Árvore da Vida — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/arvore-da-vida.png" alt="A Árvore da Vida — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -447,11 +417,6 @@
         <p>Os nórdicos erguem Yggdrasil, a árvore que sustenta nove mundos ao mesmo tempo, em cuja base as Nornas tecem o destino de deuses e homens sem distinção entre uns e outros — a árvore não observa o destino, ela o tece fisicamente em suas raízes. Na mitologia chinesa, Fusang é a árvore onde os dez sóis do céu descansam, empoleirados como pássaros, revezando-se para nascer um por dia — até o mito registrar o dia em que todos os dez insistiram em nascer juntos, incendiando a terra, obrigando o arqueiro Hou Yi a abatê-los.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato que funda duas formas na mesma composição: por baixo, a silhueta orgânica de uma árvore real — raízes profundas e ramificadas mergulhando na escuridão da parte inferior, tronco central, copa se abrindo na parte superior; por cima, sobreposto e irradiando a partir do centro do tronco, o diagrama sefirótico da Cabala (dez pontos de luz ligados por linhas finas), como se o mapa místico estivesse nascendo de dentro da própria árvore. O conjunto deve ler como uma mandala vertical: simetria irradiando do centro, não um infográfico didático — sem nomes hebraicos escritos, sem rótulos. Fundo de mármore escuro quase negro. Paleta: preto mármore, dourado envelhecido (#C9A35E), raízes em tom mais bronze/sombrio se perdendo na base, leve brilho difuso nos pontos de interseção do diagrama. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -468,8 +433,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/coroa.png" alt="A Coroa — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/coroa.png" alt="A Coroa — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -507,11 +474,6 @@
         <p>Ariadne, depois de ajudar Teseu a atravessar o labirinto e ser abandonada por ele numa ilha, recebe de Dionísio uma coroa de ouro como presente de casamento — coroa que, à sua morte, o deus lança ao céu, onde se torna a constelação Corona Borealis, ainda visível hoje. A mulher que deu o fio para sair de um labirinto termina coroada entre as estrelas por um deus diferente daquele que ela salvou.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: uma coroa sugerida apenas por linhas de luz dourada suspensas no ar, sem base metálica visível — peso sem objeto. Fundo de mármore escuro quase preto. Sem pedras preciosas, sem ouro sólido, apenas traços de luz. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -528,8 +490,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/chave.png" alt="A Chave — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/chave.png" alt="A Chave — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -567,11 +531,6 @@
         <p>Hécate, deusa grega das encruzilhadas e dos limiares, é chamada kleidouchos — a que guarda as chaves —, capaz de abrir e fechar a passagem entre o mundo dos vivos e o submundo. Diferente de Jano, guardião romano de portas físicas, Hécate guarda um limiar que não tem localização geográfica nenhuma: só se atravessa por permissão dela.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: uma única chave antiga, sem argola decorativa, parcialmente submersa em sombra — apenas o dente da chave iluminado. Fundo de mármore escuro quase preto, luz dourada pontual. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -588,8 +547,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/mascara.png" alt="A Máscara — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/mascara.png" alt="A Máscara — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -627,11 +588,6 @@
         <p>Nas tradições Iorubá do oeste africano, as máscaras Gelede, usadas em rituais que homenageiam o poder ancestral feminino, não representam espíritos: durante a cerimônia, o espírito passa a habitar quem a veste. Não é atuação — é ocupação temporária. A distinção ocidental entre rosto verdadeiro e máscara-mentira simplesmente não se aplica a essa cosmologia.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: máscara de pedra polida, traços mínimos — dois vãos para os olhos, sem expressão facial definida. Iluminação frontal suave e uniforme sobre mármore escuro quase preto, revelando a máscara inteira sem metade do rosto mergulhada em sombra total — luz mais parecida com a das outras peças da série (equilibrada, não dramática de perfil). Sem referência étnica ou cultural específica reconhecível. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -648,8 +604,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/balanca.png" alt="A Balança — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/balanca.png" alt="A Balança — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -687,11 +645,6 @@
         <p>Na tradição zoroastriana persa, a alma cruza a Ponte Chinvat depois da morte, e o peso de seus pensamentos, palavras e ações determina a largura da travessia: para quem viveu bem, a ponte se alarga; para quem não, ela se estreita até a espessura de uma lâmina, despencando a alma no abismo. Sem qualquer contato documentado com o Egito, os persas chegam à mesma ideia central da pesagem do coração.</p>
       </div>
       </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: dois pratos de balança suspensos no ar, sem fio visível conectando-os ao braço central — equilíbrio sustentado por algo que não se vê. Fundo de mármore escuro quase preto, leve luz dourada em cada prato. Paleta estritamente preto mármore e dourado envelhecido (#C9A35E) — sem névoa colorida, sem tons violeta ou azulados, luz limpa e pontual. Proporção vertical 4:5.</p>
-      </div>
     </div>
   </details>
 
@@ -708,8 +661,10 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete">
-        <img src="images/fogo.png" alt="O Fogo — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-wrap">
+        <div class="edge-fade-frame">
+          <img src="images/fogo.png" alt="O Fogo — ilustração ARKHÉ" loading="lazy">
+        </div>
       </div>
       <div class="origem-bloco">
         <div class="pilar-nome origem-label">Origem do símbolo</div>
@@ -746,11 +701,6 @@
         <div class="pilar-nome">Visão Mitológica</div>
         <p>Prometeu rouba o fogo dos deuses gregos e é punido eternamente, acorrentado a uma rocha, o fígado devorado todo dia por uma águia e regenerado toda noite. Do outro lado do mundo, na mitologia maori, o semideus trapaceiro Maui rouba o segredo do fogo da deusa Mahuika arrancando suas unhas incandescentes uma a uma, até restar só a última — que ela lança contra ele, e cujo fogo se aloja dentro da madeira. Duas culturas sem contato, dois heróis roubando fogo de uma divindade, dois castigos completamente diferentes para o mesmo gesto.</p>
       </div>
-      </div>
-      
-      <div class="prompt-imagem">
-        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
-        <p>Crie uma imagem em estilo fine art abstrato: uma única chama pequena, sem lamparina ou vela visível sustentando-a — luz suspensa, sem objeto de origem à vista. Fundo de mármore escuro quase preto. Proporção vertical 4:5.</p>
       </div>
     </div>
   </details>
