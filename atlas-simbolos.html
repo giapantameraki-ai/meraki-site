@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas dos Símbolos — Gia Pànta Meráki</title>
+<meta name="description" content="Um catálogo de símbolos universais lidos através de seis portas: Tarô, Astrologia, Cabala, Psicologia Junguiana, Teologia e Mitologia.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atlas dos Símbolos — Gia Pànta Meráki">
+<meta property="og:description" content="Um catálogo de símbolos universais lidos através de seis portas: Tarô, Astrologia, Cabala, Psicologia Junguiana, Teologia e Mitologia.">
+<meta property="og:image" content="https://giapantameraki.com.br/images/og-image.jpg">
+<meta property="og:url" content="https://giapantameraki.com.br/atlas-simbolos.html">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas dos Símbolos — Gia Pànta Meráki">
+<meta name="twitter:description" content="Um catálogo de símbolos universais lidos através de seis portas.">
+<meta name="twitter:image" content="https://giapantameraki.com.br/images/og-image.jpg">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --preto-marmore:#0F0E0A;
+    --preto-marmore-2:#17150F;
+    --dourado:#C9A35E;
+    --violeta:#9B7FB8;
+    --azul-celeste:#7B93A8;
+    --bronze:#A66B4F;
+    --pergaminho:#C4B896;
+    --terracota:#9B5B4A;
+    --texto:#EDE7DA;
+    --texto-suave:#B9B2A3;
+    --linha:#2A2720;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--preto-marmore);color:var(--texto);font-family:'Raleway',sans-serif;font-weight:300;line-height:1.75;}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.01em;}
+
+  .hero{padding:9rem 6vw 6rem;max-width:900px;margin:0 auto;border-bottom:1px solid var(--linha);}
+  .hero .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.4rem;}
+  .hero h1{font-size:clamp(2.4rem,5vw,4rem);font-style:italic;margin:0 0 1.6rem;}
+  .hero p{font-size:1.15rem;color:var(--texto-suave);max-width:640px;font-weight:300;}
+  .frase-impacto{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.5rem,2.6vw,2rem);
+    color:var(--dourado);max-width:680px;margin:2rem 0 0;padding-top:1.8rem;
+    border-top:1px solid var(--linha);font-weight:500;line-height:1.4;
+  }
+  .legenda-pilares{display:flex;flex-wrap:wrap;gap:1.4rem 1.8rem;margin-top:2.6rem;}
+  .legenda-item{display:flex;align-items:center;gap:.55rem;font-size:.76rem;letter-spacing:.03em;color:var(--texto-suave);}
+  .ponto{width:8px;height:8px;border-radius:50%;display:inline-block;}
+  .ponto.tarot{background:var(--violeta);}
+  .ponto.astro{background:var(--azul-celeste);}
+  .ponto.cabala{background:var(--dourado);}
+  .ponto.jung{background:var(--bronze);}
+  .ponto.teologia{background:var(--pergaminho);}
+  .ponto.mitologia{background:var(--terracota);}
+
+  .atlas-grid{max-width:1100px;margin:0 auto;padding:5rem 6vw 8rem;display:grid;gap:1.6rem;}
+  .verbete{border:1px solid var(--linha);border-radius:2px;background:linear-gradient(180deg,var(--preto-marmore-2),var(--preto-marmore));overflow:hidden;}
+  .verbete summary{list-style:none;cursor:pointer;padding:2.2rem 2.4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+  .verbete summary::-webkit-details-marker{display:none;}
+  .verbete-titulo{display:flex;align-items:center;gap:1.1rem;}
+  .rosetta{width:34px;height:34px;flex-shrink:0;}
+  .verbete-titulo h2{font-size:1.9rem;margin:0;}
+  .gancho{font-size:.95rem;color:var(--texto-suave);font-style:italic;margin-top:.35rem;max-width:520px;}
+  .toggle-sinal{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--dourado);flex-shrink:0;transition:transform .3s ease;}
+  .verbete[open] .toggle-sinal{transform:rotate(45deg);}
+  .verbete-corpo{padding:0 2.4rem 2.8rem;border-top:1px solid var(--linha);}
+
+  .origem-bloco{padding:2rem 0 .5rem;max-width:760px;}
+  .origem-label{color:var(--texto)!important;}
+  .origem-bloco p{font-size:1rem;color:var(--texto-suave);}
+
+  .grid-pilares{display:grid;grid-template-columns:1fr;gap:0;margin-top:1rem;}
+  @media(min-width:820px){.grid-pilares{grid-template-columns:1fr 1fr;}}
+  .pilar{padding:1.6rem 1.6rem 0 0;border-top:1px solid var(--linha);}
+  @media(min-width:820px){
+    .pilar:nth-child(odd){border-right:1px solid var(--linha);padding-right:2rem;}
+    .pilar:nth-child(even){padding-left:2rem;}
+  }
+  .pilar-nome{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.7rem;}
+  .pilar[data-pilar="tarot"] .pilar-nome{color:var(--violeta);}
+  .pilar[data-pilar="astro"] .pilar-nome{color:var(--azul-celeste);}
+  .pilar[data-pilar="cabala"] .pilar-nome{color:var(--dourado);}
+  .pilar[data-pilar="jung"] .pilar-nome{color:var(--bronze);}
+  .pilar[data-pilar="teologia"] .pilar-nome{color:var(--pergaminho);}
+  .pilar[data-pilar="mitologia"] .pilar-nome{color:var(--terracota);}
+  .pilar p{font-size:.96rem;color:var(--texto-suave);margin:0 0 1rem;}
+
+  .imagem-verbete{
+    position:relative;
+    width:100%;
+    max-width:340px;
+    aspect-ratio:4/5;
+    margin:1.6rem 0 .4rem;
+    overflow:hidden;
+    -webkit-mask-image:radial-gradient(ellipse 80% 80% at center, #000 55%, transparent 100%);
+    mask-image:radial-gradient(ellipse 80% 80% at center, #000 55%, transparent 100%);
+  }
+  .imagem-verbete img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    animation:kenburns 22s ease-in-out infinite alternate;
+    filter:saturate(.92) contrast(1.02);
+  }
+  @keyframes kenburns{
+    0%{transform:scale(1) translate(0,0);}
+    100%{transform:scale(1.09) translate(-1%,-1%);}
+  }
+  @media (prefers-reduced-motion:reduce){.imagem-verbete img{animation:none;}}
+  .prompt-imagem{margin-top:1rem;padding:1.4rem 1.6rem;background:rgba(201,163,94,.06);border:1px dashed var(--dourado);border-radius:2px;}
+  .prompt-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);margin-bottom:.5rem;}
+  .prompt-imagem p{font-size:.85rem;color:var(--texto-suave);font-style:italic;margin:0;}
+
+  .nota-arquitetura{max-width:900px;margin:0 auto;padding:0 6vw 6rem;font-size:.85rem;color:var(--texto-suave);border-top:1px solid var(--linha);padding-top:3rem;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><strong>meráki</strong></a>
+    <div class="nav-links">
+      <a href="sobre.html">sobre</a>
+      <a href="arkhe.html">arkhé</a>
+      <a href="tarot.html">tarô</a>
+      <a href="atlas-simbolos.html" class="active">atlas</a>
+      <a href="diagnostico-simbolico.html">diagnóstico</a>
+      <a href="arquivo.html">arquivo arkhé</a>
+      <a href="depoimentos.html">depoimentos</a>
+      <a href="vestigios.html">vestígios</a>
+      <a href="contato.html">contato</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Atlas ARKHÉ</div>
+  <h1>Atlas dos Símbolos</h1>
+  <p>Um símbolo não pertence a um sistema só. A serpente que aparece na Cabala é a mesma que muda de pele na Astrologia e se enrola na cauda na psicologia de Jung — e a mesma que sustenta Vishnu no hinduísmo e é esmagada como ídolo em Reis. Este atlas lê cada símbolo por seis portas — Tarô, Astrologia, Cabala, Psicologia Junguiana, Teologia e Mitologia — e mostra onde as leituras se cruzam, se contradizem ou se completam.</p>
+  <p class="frase-impacto">O símbolo não pertence a quem o nomeou primeiro. Pertence a quem consegue ouvir todas as vezes em que ele já foi dito.</p>
+  <div class="legenda-pilares">
+    <span class="legenda-item"><span class="ponto tarot"></span>Tarô</span>
+    <span class="legenda-item"><span class="ponto astro"></span>Astrologia</span>
+    <span class="legenda-item"><span class="ponto cabala"></span>Cabala</span>
+    <span class="legenda-item"><span class="ponto jung"></span>Psicologia Junguiana</span>
+    <span class="legenda-item"><span class="ponto teologia"></span>Teologia</span>
+    <span class="legenda-item"><span class="ponto mitologia"></span>Mitologia</span>
+  </div>
+</section>
+
+<main class="atlas-grid">
+
+  <details class="verbete" open>
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>A Serpente</h2>
+          <div class="gancho">Muda de pele inteira e continua sendo o mesmo animal. Nenhum outro símbolo explica a identidade tão bem.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/serpente.png" alt="A Serpente — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>A serpente entra na história humana antes da escrita, antes da agricultura, antes de qualquer sistema que hoje chamaríamos de simbólico. Nas cavernas do Paleolítico Superior ela já aparece gravada ao lado de figuras femininas — não como bicho, mas como linha que se move sozinha, o primeiro objeto do mundo natural que um humano decidiu significar sem tentar caçar, comer ou temer por inteiro. O Egito da primeira dinastia já a usa como coroa — o uraeus, na testa dos faraós — três mil anos antes da era comum. A Mesopotâmia a associa a Ningishzida, guardião do limiar entre os mundos, quase no mesmo período. Quando a tradição hebraica escreve o Éden, a serpente já carrega milênios de uso simbólico anterior: o texto não inventa o símbolo, herda um que já era antigo quando foi escrito.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>O detalhe que quase ninguém menciona: a serpente enrolada ao bastão de A Papisa não estava nos baralhos originais de Marselha. Ela chega no século XIX, quando Éliphas Lévi e depois a Golden Dawn reescrevem o Tarô à luz da Cabala e de um Egito hermético em boa parte inventado pela própria época. A carta que hoje lemos como “sabedoria oculta ancestral” é, na verdade, uma releitura vitoriana de um baralho de jogos renascentista. Isso não torna a leitura falsa — torna-a mais interessante: a serpente ali é prova de que os símbolos continuam sendo escritos, não apenas herdados. O oculto, às vezes, tem data de nascimento recente.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>Ofiúco existe na faixa do zodíaco há tanto tempo quanto qualquer outra constelação — o Sol atravessa seu território todos os anos, entre novembro e dezembro. Ele não foi esquecido: foi cortado. Os sacerdotes babilônios fixaram o zodíaco em doze signos por razões de calendário e numerologia, não de astronomia — doze se divide bem, encaixa nos meses lunares, fecha contas. Ofiúco sobrava. O gesto de excluir o que não fecha a conta redonda é, ele mesmo, arquetípico: toda tradição decide o que vai ficar de fora do sistema oficial, e o que fica de fora não desaparece — só passa a ser lido como exceção, ou como segredo.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>Da'at não é uma das dez sephirot. Ela aparece no diagrama como um espaço vazio, um lugar que se nomeia mas não se numera — a tradição luriânica lê essa ausência como cicatriz, o ponto onde os vasos primordiais se romperam ao tentar conter uma luz forte demais para qualquer recipiente. A serpente do Éden, nessa chave, não introduz o conhecimento: ela aponta para a fratura que já estava lá, a rachadura por onde esse conhecimento sempre teria vazado, com ou sem fruto. Culpar a serpente é mais fácil do que admitir que o sistema já vinha rachado desde antes dela aparecer.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>Jung registra, no Livro Vermelho, seus próprios encontros com figuras de serpente durante a imaginação ativa que praticou entre 1913 e 1930 — não como metáfora de aula, mas como visão que ele mesmo atravessou e temeu. É desse material, vivido em primeira pessoa, que nasce sua leitura da serpente como elo com o princípio ctônico feminino — tudo aquilo que a psicologia racionalista ocidental havia empurrado para baixo do chão da consciência. O uróboro que se cita tanto é a versão domesticada dessa experiência. A experiência bruta foi mais parecida com medo.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>Muitos anos antes de virar vilã do Éden, a serpente já era instrumento de cura por ordem divina na mesma tradição bíblica: em Números 21, Moisés ergue uma serpente de bronze — Nehushtan — num mastro, e quem a contempla se cura da praga que assolava o povo no deserto. Séculos depois, o rei Ezequias manda destruir esse mesmo objeto sagrado, porque o povo havia passado a queimar incenso para ele como se fosse um deus à parte (2 Reis 18:4). A mesma serpente, dentro da mesma tradição, passa de remédio ordenado por Deus a ídolo que precisa ser esmagado. O Novo Testamento fecha esse círculo de um jeito que poucas leituras populares mencionam: em João 3:14, Jesus compara a própria crucificação diretamente ao episódio da serpente de bronze — “como Moisés levantou a serpente no deserto, assim importa que o Filho do Homem seja levantado.” A serpente não é purificada — é reaproveitada.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>No hinduísmo, Ananta-Shesha, a serpente infinita, sustenta o próprio Vishnu flutuando sobre as águas primordiais entre um universo e o seguinte — não ameaça, mas fundamento literal da existência. Na mitologia nórdica, Jörmungandr circula o mundo inteiro mordendo a própria cauda no fundo do oceano, e sua morte, no Ragnarök, é também o gatilho do fim de tudo: a serpente que sustenta o mundo é a mesma que, ao se romper, o destrói. Na Mesoamérica, a serpente muda de função outra vez: Quetzalcoatl, entre os astecas, e Kukulcán, entre os maias, é serpente emplumada — deus do vento, da aprendizagem, um dos criadores do mundo, não sua ameaça. Três civilizações sem contato entre si escolhem a mesma criatura para guardar o ponto mais alto e mais baixo da cosmologia.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato, fundo de mármore escuro quase preto com veios sutis. Uma serpente estilizada em traço único contínuo — glifo gravado, não animal naturalista. Luz rasante lateral, como relevo de templo antigo fotografado de perto. Paleta: preto mármore, dourado envelhecido (#C9A35E), leves toques de bronze. Sem moldura decorativa, sem fundo de floresta ou jardim, sem iconografia religiosa explícita. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>O Espelho</h2>
+          <div class="gancho">Devolve exatamente o que chega até ele. O problema nunca foi o vidro.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/espelho.png" alt="O Espelho — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>O espelho mais antigo que se conhece é de obsidiana polida, encontrado em Çatalhöyük, na Anatólia, datado de cerca de 6000 a.C. — quase dois mil anos antes de o vidro aparecer em qualquer civilização. No Egito, os espelhos de bronze eram moldados com o rosto da deusa Hathor entalhado no cabo: olhar para o espelho não era vaidade, era literalmente olhar para dentro do rosto de uma divindade. A leitura ocidental do espelho como armadilha — o mito de Narciso — é grega, chega séculos depois, e já reflete uma virada cultural: de objeto sagrado a advertência moral.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>Os baralhos de Marselha não desenham espelho nenhum em A Lua — a associação vem do renascimento mágico, da tradição de scrying, olhar para superfícies escuras em busca de visão. John Dee, astrólogo da corte de Elizabeth I, usava um espelho de obsidiana asteca — hoje exposto no Museu Britânico — para conversar com espíritos. A Lua não ilustra reflexo: ela documenta uma prática real de gente que acreditava enxergar o invisível numa superfície polida.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>Mercúrio retrógrado não inverte movimento nenhum no espaço — é ilusão de ótica pura, o efeito de a Terra ultrapassar o planeta em sua própria órbita, como um carro mais rápido faz o mais lento parecer andar para trás na estrada ao lado. O medo coletivo em torno do fenômeno é, sem exagero, medo da própria posição do observador — não do planeta.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>A literatura talmúdica usa a palavra aspaklaria — espelho, ou lente — para diferenciar qualidades de visão profética: Moisés enxergava através de um aspaklaria meirah, um espelho claro; os demais profetas, através de um aspaklaria she'eina meirah, um espelho turvo. A revelação nunca foi binária nessa tradição — era uma escala de nitidez, e quase ninguém tinha acesso ao grau mais alto dela.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>O encontro com a sombra, para Jung, muitas vezes é literalmente um encontro de espelho: o momento em que o próprio reflexo passa a parecer, por um instante, um estranho. Esse Doppelgänger — o duplo que assusta por ser familiar demais — aparece com frequência em sonhos exatamente na fase em que a sombra começa a exigir reconhecimento.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>Êxodo 38:8 registra um detalhe raramente citado: a bacia de bronze do Tabernáculo, usada pelos sacerdotes para purificação ritual, foi fundida a partir dos espelhos de bronze que as mulheres doaram na entrada da Tenda do Encontro. O objeto de vaidade pessoal vira, sem transição suave nenhuma, instrumento de purificação sagrada. Paulo, séculos depois, inverte a imagem em 1 Coríntios 13:12: “agora vemos como por espelho, em enigma” — o conhecimento divino nesta vida é, por definição, reflexo imperfeito, nunca visão direta.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>No xintoísmo japonês, a deusa do sol Amaterasu se esconde numa caverna, mergulhando o mundo em escuridão, e só é atraída para fora ao ver o próprio reflexo brilhando num espelho de bronze — o Yata no Kagami, hoje um dos três tesouros sagrados da família imperial japonesa. Entre os astecas, Tezcatlipoca, “Espelho Fumegante”, carrega um disco de obsidiana polida usado para adivinhação e para revelar a natureza oculta de quem nele se olhasse. Duas mitologias sem contato entre si escolhem o espelho como instrumento literal de autoencontro divino.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: um disco de bronze antigo, sem moldura decorativa, refletindo apenas um borrão dourado indefinido — nunca um rosto nítido. Fundo de mármore escuro quase preto com veios sutis. Paleta estritamente preto mármore e dourado envelhecido (#C9A35E), sem outras cores, sem névoa colorida ao redor do disco. Sem iconografia religiosa explícita, sem moldura ornamentada. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>O Labirinto</h2>
+          <div class="gancho">Um único caminho, sem bifurcações — o único jeito de se perder ali é parar de andar.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/labirinto.png" alt="O Labirinto — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>O padrão de labirinto unicursal — um único caminho, sem bifurcações — aparece em gravuras rupestres na Galiza e no Vale Camônica, na Itália, datadas de cerca de 1800 a.C., mais de mil anos antes de qualquer menção ao Minotauro cretense. A mesma forma surge em petróglifos Hopi, na América do Norte, e em pisos de templos na Índia. O mito grego — Teseu, o fio de Ariadne, o monstro no centro — é narrativa tardia costurada sobre um símbolo que já circulava havia milênios sem qualquer história anexada.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>A ideia de que os arcanos maiores contam uma “Jornada do Louco” — sequência narrativa com começo, meio e fim — é popularização do século XX, associada a Eden Gray nos anos 1970. Antes disso, a literatura esotérica tratava os arcanos como hierarquia estática, uma escada, não uma história. A sensação de estar “percorrendo um caminho” ao ler o Tarô é, em boa parte, uma lente recente aplicada sobre um sistema mais antigo.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>As casas do mapa se contam no sentido anti-horário a partir do Ascendente — na contramão de qualquer hábito comum de leitura. Essa direção não é convenção arbitrária: espelha o movimento aparente do céu visto da Terra. Ler um mapa astral já exige, estruturalmente, andar contra o sentido esperado.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>A Árvore contém dois caminhos sobrepostos e opostos: o Raio Relâmpago, que desce em zigue-zague de Kéter até Malkhut na ordem da criação, e o Caminho de Retorno, que o praticante percorre em sentido inverso, mais devagar, tocando pontos intermediários diferentes. O mesmo diagrama serve dois labirintos distintos, andando em direções contrárias.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>Jung usava especificamente a imagem do labirinto — não apenas de espiral — para descrever a transferência em análise: analista e paciente perdidos juntos num caminho comum, onde se perder faz parte da cura, não é falha dela. Ariadne, nessa leitura, não é quem sabe o caminho — é quem disponibiliza o fio, sem garantia nenhuma de saída.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>A catedral de Chartres, na França, tem embutido no chão de sua nave um labirinto de pedra do século XIII que os fiéis percorriam de joelhos como peregrinação substituta — quem não podia viajar até Jerusalém caminhava o “Chemin de Jérusalem” ali mesmo, dentro da própria igreja. A penitência não exigia distância geográfica: exigia o tempo e a humildade de percorrer cada curva até o centro.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Heródoto descreve um labirinto egípcio junto ao lago Méris, próximo a Hawara, com milhares de câmaras — parte real, parte lenda já na Antiguidade. No Hopi, o símbolo Tápu'at, “Mãe e Filho”, desenha um labirinto unicursal que representa o caminho de emergência da humanidade saindo do mundo inferior para este — a mesma forma que na Grécia guarda um monstro, entre os Hopi guarda um nascimento.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: espiral única, sem bifurcações, traçada em fio dourado fino sobre mármore escuro quase preto — geometria pura, sem parede de pedra ou referência a labirinto turístico. Leve brilho ao centro da espiral. Sem criaturas, sem figuras humanas. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>A Árvore</h2>
+          <div class="gancho">A parte que sustenta fica debaixo da terra, invisível, enquanto a copa recebe todo o crédito pela luz.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/arvore.png" alt="A Árvore — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>Antes de qualquer oráculo de cartas, havia o oráculo de árvore. Em Dodona, na Grécia, sacerdotisas interpretavam o vento passando pelas folhas de um carvalho sagrado como a própria voz de Zeus — um dos oráculos mais antigos do mundo grego, mais antigo até que Delfos. A palavra “druida”, na tradição celta, provavelmente vem da raiz que designa carvalho. E sob uma figueira específica, ainda viva por descendência direta em Bodh Gaya, um homem chamado Sidarta se tornou Buda. Em três tradições distintas, a árvore não simboliza sabedoria à distância — é o lugar físico onde a sabedoria efetivamente aconteceu.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>No Ás de Paus do baralho Rider-Waite, o bastão é literalmente um galho cortado que ainda solta folhas — madeira que se recusa a terminar de morrer. Poucos leitores param nesse detalhe, mas ele é a carta inteira resumida numa imagem: força vital que continua brotando mesmo depois do corte que deveria interrompê-la.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>A técnica das casas derivadas trata qualquer casa do mapa como um mapa novo, completo, nascendo de dentro da casa original — a sétima casa vista como uma primeira casa própria, com suas doze divisões inteiras dentro dela. O mapa se ramifica de verdade, recursivamente, como uma árvore que gera outra árvore inteira em cada um dos seus galhos.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>O candelabro descrito em Êxodo — a Menorá — tem seus cálices desenhados em forma de flor de amendoeira, a shaked, a árvore que floresce primeiro entre todas no Levante. Seu próprio nome hebraico significa “a vigilante”, a que se apressa. A tradição lê nisso um símbolo do próprio movimento divino: agir primeiro, florescer antes de qualquer sinal de que é hora.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>A arbor philosophica, a árvore filosófica dos textos alquímicos que Jung estudou a fundo, representa o processo inteiro da grande obra: crescimento lento, contido dentro do vaso, sem pressa possível. Diferente da mandala circular, essa árvore não busca um centro — busca tempo, camada sobre camada, a única coisa que nenhuma técnica consegue acelerar.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>Juízes 9 guarda uma parábola política pouco lembrada: as árvores decidem ungir um rei entre si. A oliveira recusa, por não abrir mão de seu óleo; a figueira recusa, por não abrir mão de seus frutos; a videira recusa, por não abrir mão do vinho. Só o espinheiro aceita — a única planta sem nada de valioso a perder, e portanto a única disposta a reinar sobre as demais. Um dos textos bíblicos mais afiados sobre poder está escondido dentro de uma fábula de árvores.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Dafne, ninfa perseguida por Apolo, pede socorro ao próprio pai, o deus-rio Peneu, e é transformada em loureiro no instante exato em que seria alcançada — a árvore, ali, não é destino: é fuga bem-sucedida, o único jeito de escapar que a mitologia grega concede a uma mulher encurralada. Apolo passa a usar louros como coroa para sempre, carregando no próprio símbolo de vitória a lembrança de uma recusa.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: um único galho cortado, ainda brotando folhas novas na ponta. Traço fino, dourado sobre mármore escuro quase preto. Sem raízes visíveis, sem copa completa — só o galho e o broto novo. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>A Árvore da Vida</h2>
+          <div class="gancho">Dez círculos, vinte e dois caminhos — e o mapa mais copiado da tradição mística é mais recente do que parece.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/arvore-da-vida.png" alt="A Árvore da Vida — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>A árvore como símbolo de vida atravessa quase toda civilização que já talhou pedra. Os assírios gravam sua Árvore Sagrada nos relevos de palácio quase mil anos antes da era comum, ladeada por figuras aladas que a regam com pinhas — a imagem mais repetida da arte mesopotâmica depois do próprio rei. Os egípcios têm a árvore-persea, onde os deuses escrevem o nome de cada faraó no dia do nascimento. Os nórdicos erguem Yggdrasil, cujas raízes tocam três mundos ao mesmo tempo. Mas o diagrama que hoje chamamos de Árvore da Vida cabalística — dez círculos, vinte e dois caminhos, a forma exata que se vê em qualquer livro de Cabala — não é tão antigo quanto parece: cristaliza-se tarde, entre o Zohar do século XIII e as sínteses renascentistas de cabalistas cristãos como Pico della Mirandola, chegando à forma fixa que conhecemos só com os herméticos da Golden Dawn, no fim do XIX. A raiz é antiga. O mapa é recente.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>A ideia de que os vinte e dois arcanos maiores correspondem, um a um, aos vinte e dois caminhos da Árvore da Vida não vem do Tarô nem da Cabala originais — vem de MacGregor Mathers e da Golden Dawn forçando a correspondência entre um baralho de jogos italiano do século XV e um diagrama místico judaico que nunca teve carta nenhuma em sua história. A costura é genial e é, ao mesmo tempo, uma invenção de cento e quarenta anos atrás vendida como sabedoria milenar. Isso não invalida a leitura — os sistemas simbólicos se enriquecem exatamente assim, por enxerto. Mas vale saber que o enxerto tem data.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>Cada sephirah da Árvore recebe um planeta: Chessed é Júpiter, Guevurá é Marte, Tiféret é o Sol, Hod é Mercúrio, Netzach é Vênus, Iesod é a Lua. A diferença em relação à astrologia comum não está nos planetas — está na geometria. No mapa natal, os planetas se organizam horizontalmente, em casas e signos, todos no mesmo plano. Na Árvore, os mesmos planetas se organizam verticalmente, numa hierarquia de densidade crescente, da luz mais sutil até a matéria mais bruta. É o mesmo céu, lido em outra dimensão.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>Um detalhe que a maioria das ilustrações populares esconde: a Árvore cabalística é tradicionalmente descrita como invertida. A raiz não fica embaixo, como em qualquer árvore que já se viu crescer — fica em cima, no Ein Sof, o infinito inatingível que nenhuma sephirah consegue nomear por completo. Os galhos é que descem, esticando-se até a matéria. A origem da própria vida, nessa leitura, não está enterrada no passado de cada um — está acima, fora do alcance, e o que parece raiz é, na verdade, o ponto mais distante da fonte.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>Jung se aproximou da Cabala tarde, sobretudo em seus últimos anos de trabalho com alquimia, e reconheceu na Árvore um símbolo de totalidade psíquica — próximo do que ele já chamava de mandala, mas com uma diferença que ele próprio registrou como significativa: a mandala é circular, centrada; a Árvore é vertical, ramificada. Isso muda o que “individuação” significa nessa chave: não apenas encontrar um centro, mas também se mover entre níveis — reconhecer que existem andares na própria psique.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>No relato do Gênesis existem duas árvores distintas no centro do Éden — a Árvore da Vida e a Árvore do Conhecimento do Bem e do Mal —, fáceis de confundir numa leitura rápida. Depois da expulsão, o texto é específico: querubins com espada flamejante são postos para guardar apenas a Árvore da Vida, impedindo que a humanidade coma dela e viva para sempre (Gênesis 3:22-24). O detalhe que quase nenhuma leitura dominical menciona: a mesma árvore reaparece no último capítulo da Bíblia cristã. Em Apocalipse 22:2, a Árvore da Vida está de volta, no centro da Nova Jerusalém, dando doze tipos de fruto e cujas folhas servem para “a cura das nações” — de acesso livre, sem guarda nenhuma. A árvore proibida no primeiro livro é oferecida de bandeja no último.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Os nórdicos erguem Yggdrasil, a árvore que sustenta nove mundos ao mesmo tempo, em cuja base as Nornas tecem o destino de deuses e homens sem distinção entre uns e outros — a árvore não observa o destino, ela o tece fisicamente em suas raízes. Na mitologia chinesa, Fusang é a árvore onde os dez sóis do céu descansam, empoleirados como pássaros, revezando-se para nascer um por dia — até o mito registrar o dia em que todos os dez insistiram em nascer juntos, incendiando a terra, obrigando o arqueiro Hou Yi a abatê-los.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato que funda duas formas na mesma composição: por baixo, a silhueta orgânica de uma árvore real — raízes profundas e ramificadas mergulhando na escuridão da parte inferior, tronco central, copa se abrindo na parte superior; por cima, sobreposto e irradiando a partir do centro do tronco, o diagrama sefirótico da Cabala (dez pontos de luz ligados por linhas finas), como se o mapa místico estivesse nascendo de dentro da própria árvore. O conjunto deve ler como uma mandala vertical: simetria irradiando do centro, não um infográfico didático — sem nomes hebraicos escritos, sem rótulos. Fundo de mármore escuro quase negro. Paleta: preto mármore, dourado envelhecido (#C9A35E), raízes em tom mais bronze/sombrio se perdendo na base, leve brilho difuso nos pontos de interseção do diagrama. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>A Coroa</h2>
+          <div class="gancho">Pesa mais do que qualquer outro adereço porque nunca foi decoração.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/coroa.png" alt="A Coroa — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>A Paleta de Narmer, gravada por volta de 3100 a.C., registra o momento exato em que um rei passa a usar as coroas do Alto e do Baixo Egito unificadas — um dos primeiros símbolos políticos da história que se pode datar a um evento específico, não a uma tradição vaga. Paralelamente, a palavra latina corona nomeava, originalmente, a grinalda de folhas dada a atletas e militares vitoriosos — nada de metal, nada de trono. Duas linhagens completamente distintas — poder de Estado e reconhecimento de mérito — convergem no mesmo símbolo que hoje se usa sem distinguir qual das duas está sendo invocada.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>No baralho Thoth, de Aleister Crowley e Frieda Harris, a grinalda de O Mundo não é vegetal — é uma serpente mordendo a própria cauda. A mesma carta, a mesma promessa de ciclo fechado, mas coroada por uma imagem inteiramente diferente da versão Rider-Waite: duas visões discordando sobre o que, exatamente, deveria coroar a conclusão de um ciclo.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>Antes de qualquer signo solar, a astrologia persa medieval já chamava quatro estrelas fixas de “estrelas régias” — Aldebaran, Régulo, Antares e Fomalhaut — cada uma guardiã de uma direção cardeal do céu. Essas coroas estelares são mais antigas do que a leitura solar que hoje domina o imaginário popular.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>Kéter, a coroa, às vezes é descrita como sephirah demais próxima do Ein Sof incognoscível para contar de verdade entre as dez — o mesmo tipo de ausência estrutural que marca Da'at, só que no topo da Árvore, não no meio. O sistema tem um vazio na base e outro no ápice: nem o começo nem o centro se deixam nomear por completo.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>Sonhos de casamento e coroação real, na leitura junguiana, sinalizam a coniunctio alquímica — rei e rainha unidos, coroados juntos, nunca sozinhos. A coroa, nesse sistema, não premia um indivíduo: marca a união bem-sucedida de duas forças opostas dentro de uma mesma psique.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>A única coroa que os quatro Evangelhos descrevem em detalhe não é de ouro: é de espinhos, trançada por soldados romanos como zombaria antes da crucificação (Mateus 27:29). A tradição que consagra a coroa como símbolo máximo de honra tem, no centro exato de sua própria narrativa fundadora, uma coroa usada como arma de humilhação — a coroa como tortura disfarçada de título.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Ariadne, depois de ajudar Teseu a atravessar o labirinto e ser abandonada por ele numa ilha, recebe de Dionísio uma coroa de ouro como presente de casamento — coroa que, à sua morte, o deus lança ao céu, onde se torna a constelação Corona Borealis, ainda visível hoje. A mulher que deu o fio para sair de um labirinto termina coroada entre as estrelas por um deus diferente daquele que ela salvou.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: uma coroa sugerida apenas por linhas de luz dourada suspensas no ar, sem base metálica visível — peso sem objeto. Fundo de mármore escuro quase preto. Sem pedras preciosas, sem ouro sólido, apenas traços de luz. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>A Chave</h2>
+          <div class="gancho">Abre uma porta específica. Nenhuma chave mestra sobrevive a um sistema simbólico sério.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/chave.png" alt="A Chave — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>Os mecanismos de fechadura mais antigos já encontrados vêm do Egito e de Nínive, com quase quatro mil anos — mas o peso simbólico da chave vem de outro lugar: Jano, deus romano dos limiares e dos começos, era frequentemente representado segurando uma chave. Quando o cristianismo entrega a Pedro “as chaves do reino dos céus”, em Mateus 16:19, está transpondo quase sem alteração o papel de um deus pagão guardião de portas para uma nova estrutura de autoridade religiosa.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>As chaves cruzadas de O Hierofante não são símbolo genérico de tradição — são o brasão papal, as chaves de ouro e prata do Vaticano, herdeiras diretas da promessa feita a Pedro. A maioria lê a carta como “ensino, autoridade” sem perceber que está olhando, literalmente, para o escudo de uma instituição religiosa específica.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>A astrologia árabe medieval tinha o conceito de almuten — o planeta que vence a disputa de dignidades por múltiplos critérios sobrepostos, considerado a chave real de um ponto do mapa mesmo quando não é o regente óbvio. Diferentes escolas discordavam sobre quem, de fato, segurava a chave de cada casa.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>Pela guematria, cada letra hebraica carrega valor numérico — o que significa que uma única chave-letra pode abrir várias portas ao mesmo tempo, todas as palavras que compartilham a mesma soma. Não existe fechadura de porta única nesse sistema: existe fechadura de correspondência múltipla, para quem sabe contar.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>O método de amplificação de Jung — diferente da associação livre freudiana — não busca a chave de um símbolo só na história pessoal de quem sonhou. Busca comparando a imagem com paralelos de mitologia, alquimia, religião. A chave, nesse método, nunca se encontra sozinha: encontra-se ao lado de uma biblioteca inteira de imagens equivalentes.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>Isaías 22:22 já usa a expressão “a chave da casa de Davi”, colocada sobre o ombro de Eliaquim como símbolo de mordomia sobre o palácio real — texto escrito séculos antes de Mateus 16:19 repetir quase a mesma fórmula para Pedro. A frase que soa como invenção cristã original já era título administrativo hebraico havia muito tempo.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Hécate, deusa grega das encruzilhadas e dos limiares, é chamada kleidouchos — a que guarda as chaves —, capaz de abrir e fechar a passagem entre o mundo dos vivos e o submundo. Diferente de Jano, guardião romano de portas físicas, Hécate guarda um limiar que não tem localização geográfica nenhuma: só se atravessa por permissão dela.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: uma única chave antiga, sem argola decorativa, parcialmente submersa em sombra — apenas o dente da chave iluminado. Fundo de mármore escuro quase preto, luz dourada pontual. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>A Máscara</h2>
+          <div class="gancho">Protege e disfarça com o mesmo gesto. A diferença está em quem está do outro lado.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/mascara.png" alt="A Máscara — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>A máscara neolítica encontrada nas colinas próximas a Hebron, esculpida em pedra há cerca de nove mil anos, é um dos objetos de arte figurativa mais antigos já descobertos — anterior à própria escrita em milênios. Mas o detalhe mais revelador é linguístico: em grego, prosopon significa, ao mesmo tempo, rosto, máscara e pessoa — a mesma palavra, sem distinção nenhuma entre o que se mostra e quem se é. A separação entre máscara-mentira e rosto-verdade é filosofia posterior, não vocabulário original.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>As cartas de corte do baralho Visconti-Sforza, o mais antigo Tarô completo que sobreviveu, foram modeladas sobre retratos reais da nobreza de Milão — o Rei e a Rainha que hoje lemos como arquétipos universais começaram como fofoca visual sobre pessoas específicas do século XV, comissionada para um baralho de casamento.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>A astrologia helenística chamava o Ascendente de horoskopos, o vigia da hora — o ponto que o céu simplesmente mostrava no instante exato do nascimento. A máscara, nessa origem, não é escolhida por ninguém: é atribuída inteiramente pelo momento, o que transforma persona em circunstância, não em disfarce deliberado.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>Os partzufim — literalmente “rostos” ou “semblantes” na Cabala luriânica — descrevem o divino se revelando apenas através de uma série de faces personificadas específicas, cada uma uma máscara necessária para um aspecto que não poderia se mostrar diretamente. A mesma lógica do prosopon grego, chegando por caminho totalmente separado à mesma conclusão: o oculto precisa de rosto para se tornar cognoscível.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>Jung não tratava a persona como falha pessoal — via sua formação como necessidade normal da primeira metade da vida. A crise que via em consultório, geralmente em profissionais bem-sucedidos por volta dos quarenta anos, não era ter uma máscara: era não ter construído nada além dela. A máscara só é perigosa quando não sobra rosto nenhum embaixo capaz de tirá-la.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>Depois de descer do Sinai, o rosto de Moisés brilha tão intensamente que o povo tem medo de se aproximar — ele passa a usar um véu ao falar com eles, removendo-o apenas diante de Deus (Êxodo 34:29-35). Paulo reinterpreta esse véu em 2 Coríntios 3 como símbolo de entendimento obscurecido, removido apenas em Cristo. O mesmo objeto começa como proteção contra um brilho excessivo e termina como metáfora de cegueira espiritual.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Nas tradições Iorubá do oeste africano, as máscaras Gelede, usadas em rituais que homenageiam o poder ancestral feminino, não representam espíritos: durante a cerimônia, o espírito passa a habitar quem a veste. Não é atuação — é ocupação temporária. A distinção ocidental entre rosto verdadeiro e máscara-mentira simplesmente não se aplica a essa cosmologia.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: máscara de pedra polida, traços mínimos — dois vãos para os olhos, sem expressão facial definida. Iluminação frontal suave e uniforme sobre mármore escuro quase preto, revelando a máscara inteira sem metade do rosto mergulhada em sombra total — luz mais parecida com a das outras peças da série (equilibrada, não dramática de perfil). Sem referência étnica ou cultural específica reconhecível. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>A Balança</h2>
+          <div class="gancho">Mede sem julgar — até alguém decidir ler o lado que pesou mais.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/balanca.png" alt="A Balança — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>A cerimônia egípcia da pesagem do coração, registrada no Livro dos Mortos por volta de 1500 a.C., mostra Anúbis pesando o coração do morto contra a pena de Maat, a deusa da ordem e da verdade — um dos primeiros usos documentados de uma balança como metáfora de justiça cósmica, mais de mil anos antes de Têmis grega ou Justitia romana. A balança física, porém, já existia antes como ferramenta de comércio no Vale do Indo, séculos mais cedo: a imagem da justiça nasceu emprestada da tecnologia de mercado, não o contrário.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>Nos baralhos de Marselha, a Justiça ocupa a posição VIII. Na reordenação hermética que segue o Rider-Waite, ela se move para XI, trocando de lugar com a Força — ajuste feito para que a numeração batesse com a correspondência astrológica de Libra. Duas linhagens de Tarô discordam, de forma documentada, sobre onde exatamente a justiça deveria estar na sequência moral das cartas.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>Libra é o único signo do zodíaco representado por um objeto, não por um animal ou figura — nos zodíacos babilônios mais antigos, a mesma faixa de céu se chamava “as garras” do Escorpião vizinho. Só a astrologia romana separou o trecho, deu-lhe forma de balança, num momento que coincide, de forma pouco casual, com a campanha de Augusto para se associar publicamente à deusa Iustitia.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>Tiféret também é chamada Rachamim — compaixão — e ocupa o coração literal da Árvore, sexta entre dez sephirot. O equilíbrio ali não é cálculo frio: é compaixão funcionando como mecanismo que impede a expansão de Chessed de virar permissividade e o rigor de Guevurá de virar crueldade.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>Jung tomou emprestado o termo enantiodromia diretamente de Heráclito, filósofo pré-socrático que o usava para descrever como tudo se converte, cedo ou tarde, em seu oposto — dia em noite, vida em morte. O conceito de equilíbrio psíquico mais citado da obra junguiana é, literalmente, física grega de dois mil e quinhentos anos aplicada à mente.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>Daniel 5:27 registra a cena da escrita na parede durante o banquete de Belsazar: “Tekel: pesado foste na balança e achado em falta” — a origem literal da expressão que ainda hoje se usa em português para julgamento moral, quase três mil anos depois de escrita.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Na tradição zoroastriana persa, a alma cruza a Ponte Chinvat depois da morte, e o peso de seus pensamentos, palavras e ações determina a largura da travessia: para quem viveu bem, a ponte se alarga; para quem não, ela se estreita até a espessura de uma lâmina, despencando a alma no abismo. Sem qualquer contato documentado com o Egito, os persas chegam à mesma ideia central da pesagem do coração.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: dois pratos de balança suspensos no ar, sem fio visível conectando-os ao braço central — equilíbrio sustentado por algo que não se vê. Fundo de mármore escuro quase preto, leve luz dourada em cada prato. Paleta estritamente preto mármore e dourado envelhecido (#C9A35E) — sem névoa colorida, sem tons violeta ou azulados, luz limpa e pontual. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="verbete">
+    <summary>
+      <div class="verbete-titulo">
+        <svg class="rosetta" viewBox="0 0 40 40"><use href="#rosetta-base"/></svg>
+        <div>
+          <h2>O Fogo</h2>
+          <div class="gancho">Destrói e sustenta a vida com o mesmo movimento, sem pedir licença para nenhum dos dois.</div>
+        </div>
+      </div>
+      <span class="toggle-sinal">+</span>
+    </summary>
+    <div class="verbete-corpo">
+      
+      <div class="imagem-verbete">
+        <img src="images/fogo.png" alt="O Fogo — ilustração ARKHÉ" loading="lazy">
+      </div>
+      <div class="origem-bloco">
+        <div class="pilar-nome origem-label">Origem do símbolo</div>
+        <p>No Zoroastrismo persa, entre 1500 e 1000 a.C., o fogo — Atar — era tratado como presença visível direta do divino, mantido aceso em templos que jamais deveriam apagar. Alguns templos zoroastrianos afirmam manter a mesma chama acesa continuamente há mais de mil e quinhentos anos. De todos os elementos, apenas o fogo recebeu esse tratamento: água, terra e ar podem ser deixados ir. O fogo, nessa tradição, é o único considerado sagrado demais para se apagar.</p>
+      </div>
+      <div class="grid-pilares">
+        
+      <div class="pilar" data-pilar="tarot">
+        <div class="pilar-nome">No Tarô</div>
+        <p>A correspondência elemento-naipe que hoje parece óbvia — Paus é fogo — não era universal antes da padronização da Golden Dawn no século XIX. Tradições regionais de baralho italiano e espanhol mais antigas, em alguns casos, associavam o fogo às espadas, não aos bastões. O que parece regra fixa é, na verdade, convenção relativamente recente.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="astro">
+        <div class="pilar-nome">Na Astrologia</div>
+        <p>Áries, Leão e Sagitário compartilham o elemento fogo, mas cada um o expressa por um modo diferente — cardinal, fixo, mutável: iniciar, sustentar, espalhar. O fogo astrológico nunca foi uma coisa só. São três verbos diferentes usando o mesmo elemento.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="cabala">
+        <div class="pilar-nome">Na Cabala</div>
+        <p>A frase hebraica do episódio da sarça — esh lo tokhal, fogo que não consome — é lida por comentaristas hassídicos não como milagre único, mas como descrição de estado aspiracional: a alma equilibrada deveria arder com paixão genuína sem se destruir nem destruir o que toca.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="jung">
+        <div class="pilar-nome">Na Psicologia Junguiana</div>
+        <p>A calcinatio alquímica — queimar a matéria bruta até virar cinza antes de reconstruí-la em ouro — foi lida por Jung como a fase psicológica em que uma estrutura de identidade antiga e rígida precisa ser destruída antes que qualquer transformação genuína seja possível. Fogo, no sistema junguiano, não é apenas energia: é especificamente a fase que precisa destruir algo primeiro.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="teologia">
+        <div class="pilar-nome">Visão Teológica</div>
+        <p>Em Atos 2:3, línguas de fogo descem sobre os apóstolos no Pentecostes — o momento fundador da igreja cristã escolhe justamente o fogo como forma visível do Espírito Santo, não vento, não luz, não voz. De todos os elementos disponíveis na tradição bíblica, este é o que a narrativa escolhe para marcar o nascimento institucional de uma fé inteira.</p>
+      </div>
+        
+      <div class="pilar" data-pilar="mitologia">
+        <div class="pilar-nome">Visão Mitológica</div>
+        <p>Prometeu rouba o fogo dos deuses gregos e é punido eternamente, acorrentado a uma rocha, o fígado devorado todo dia por uma águia e regenerado toda noite. Do outro lado do mundo, na mitologia maori, o semideus trapaceiro Maui rouba o segredo do fogo da deusa Mahuika arrancando suas unhas incandescentes uma a uma, até restar só a última — que ela lança contra ele, e cujo fogo se aloja dentro da madeira. Duas culturas sem contato, dois heróis roubando fogo de uma divindade, dois castigos completamente diferentes para o mesmo gesto.</p>
+      </div>
+      </div>
+      
+      <div class="prompt-imagem">
+        <div class="prompt-label">Prompt usado para gerar a imagem acima</div>
+        <p>Crie uma imagem em estilo fine art abstrato: uma única chama pequena, sem lamparina ou vela visível sustentando-a — luz suspensa, sem objeto de origem à vista. Fundo de mármore escuro quase preto. Proporção vertical 4:5.</p>
+      </div>
+    </div>
+  </details>
+</main>
+
+<p class="nota-arquitetura">
+  Este atlas cresce por verbete. Cada símbolo novo segue a mesma estrutura — origem, seis portas de leitura, prompt de imagem — e pode ser lido isolado ou em conjunto com os demais. Dez verbetes já publicados aqui: Serpente, Espelho, Labirinto, Árvore, Árvore da Vida, Coroa, Chave, Máscara, Balança, Fogo. Candidatos naturais para a próxima leva: o Véu, a Torre, o Fio, a Roda e o Trono.
+</p>
+
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="rosetta-base">
+      <circle cx="20" cy="20" r="17" fill="none" stroke="#2A2720" stroke-width="1"/>
+      <path d="M20 20 L20 3 A17 17 0 0 1 34.72 11.5 Z" fill="#9B7FB8" opacity="0.9"/>
+      <path d="M20 20 L34.72 11.5 A17 17 0 0 1 34.72 28.5 Z" fill="#7B93A8" opacity="0.9"/>
+      <path d="M20 20 L34.72 28.5 A17 17 0 0 1 20 37 Z" fill="#C9A35E" opacity="0.9"/>
+      <path d="M20 20 L20 37 A17 17 0 0 1 5.28 28.5 Z" fill="#A66B4F" opacity="0.9"/>
+      <path d="M20 20 L5.28 28.5 A17 17 0 0 1 5.28 11.5 Z" fill="#C4B896" opacity="0.9"/>
+      <path d="M20 20 L5.28 11.5 A17 17 0 0 1 20 3 Z" fill="#9B5B4A" opacity="0.9"/>
+      <circle cx="20" cy="20" r="4" fill="#0F0E0A"/>
+    </g>
+  </defs>
+</svg>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="name">Gia Pànta Meráki</p>
+      <p class="greek">για πάντα μεράκι</p>
+    </div>
+    <div class="footer-links">
+      <a href="sobre.html">sobre</a>
+      <a href="arkhe.html">arkhé</a>
+      <a href="tarot.html">tarô</a>
+      <a href="atlas-simbolos.html">atlas</a>
+      <a href="diagnostico-simbolico.html">diagnóstico</a>
+      <a href="arquivo.html">arquivo arkhé</a>
+      <a href="depoimentos.html">depoimentos</a>
+      <a href="vestigios.html">vestígios</a>
+      <a href="contato.html">contato</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

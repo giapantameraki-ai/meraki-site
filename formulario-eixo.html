@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicitar Eixo — ARKHÉ</title>
+<meta name="description" content="Consolidação da identidade simbólica — nível avançado da escada, construído sob medida.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --preto:#0F0E0A; --preto-2:#17150F; --dourado:#C9A35E; --violeta:#9B7FB8;
+    --texto:#EDE7DA; --texto-suave:#B9B2A3; --linha:#2A2720;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--preto);color:var(--texto);font-family:'Raleway',sans-serif;font-weight:300;line-height:1.7;}
+  h1,h2,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;}
+
+  .hero{padding:6rem 6vw 3rem;max-width:720px;margin:0 auto;text-align:center;}
+  .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.4rem;}
+  .hero h1{font-size:clamp(2rem,4.5vw,3rem);font-style:italic;margin:0 0 1rem;}
+  .hero .preco-tag{font-size:.85rem;letter-spacing:.06em;color:var(--dourado);margin-bottom:1.4rem;}
+  .hero p{color:var(--texto-suave);max-width:560px;margin:0 auto;font-size:1.02rem;}
+
+  main{max-width:640px;margin:0 auto;padding:2rem 6vw 6rem;}
+
+  .bloco{margin-bottom:3rem;}
+  .bloco-titulo{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.6rem;padding-bottom:.8rem;border-bottom:1px solid var(--linha);}
+
+  .campo{margin-bottom:1.4rem;}
+  .campo label{display:block;font-size:.8rem;letter-spacing:.05em;color:var(--texto);margin-bottom:.55rem;}
+  .campo .aux{display:block;font-size:.76rem;color:var(--texto-suave);font-weight:300;margin-top:.35rem;font-style:italic;}
+  .campo input[type="text"],.campo input[type="email"],.campo input[type="tel"],
+  .campo input[type="date"],.campo input[type="time"],.campo select,.campo textarea{
+    width:100%;background:var(--preto-2);border:1px solid var(--linha);color:var(--texto);
+    padding:.85rem 1rem;font-family:'Raleway',sans-serif;font-size:.95rem;border-radius:2px;
+  }
+  .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--dourado);}
+  .campo textarea{min-height:100px;resize:vertical;}
+  .campo select{appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A35E' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:1rem;}
+
+  .duas-colunas{display:grid;grid-template-columns:1fr;gap:1.4rem;}
+  @media(min-width:560px){.duas-colunas{grid-template-columns:1fr 1fr;}}
+
+  .checkbox-grid{display:grid;grid-template-columns:1fr;gap:.7rem;}
+  @media(min-width:560px){.checkbox-grid{grid-template-columns:1fr 1fr;}}
+  .checkbox-item{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--texto-suave);}
+  .checkbox-item input{accent-color:var(--dourado);width:16px;height:16px;flex-shrink:0;}
+
+  .radio-item{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--texto-suave);margin-bottom:.6rem;}
+  .radio-item input{accent-color:var(--dourado);width:16px;height:16px;flex-shrink:0;}
+
+  .secao-condicional{
+    margin-top:1rem;padding:1.4rem;border:1px dashed var(--linha);border-radius:2px;
+    background:rgba(201,163,94,.04);
+  }
+  .secao-condicional .bloco-titulo{border:none;padding:0;margin-bottom:1.2rem;font-size:.68rem;}
+
+  button[type="submit"]{
+    width:100%;padding:1.1rem;background:var(--dourado);color:var(--preto);border:none;
+    font-family:'Raleway',sans-serif;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    font-size:.92rem;border-radius:2px;cursor:pointer;margin-top:1rem;
+  }
+  button[type="submit"]:hover{opacity:.9;}
+  .form-nota{font-size:.82rem;color:var(--texto-suave);text-align:center;margin-top:1.4rem;}
+
+  .cta-pagamento{display:inline-block;margin-top:1.4rem;padding:1rem 2.6rem;background:var(--dourado);color:var(--preto);text-decoration:none;font-weight:600;letter-spacing:.04em;border-radius:2px;font-size:.9rem;text-transform:uppercase;}
+  .secao-pagamento{max-width:640px;margin:0 auto;padding:0 6vw 3rem;text-align:center;border-bottom:1px solid var(--linha);}
+  .secao-pagamento .preco-grande{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--dourado);font-style:italic;margin:.6rem 0 0;}
+  .secao-pagamento .preco-nota{font-size:.85rem;color:var(--texto-suave);margin-top:1.6rem;}
+
+  footer{text-align:center;padding:2rem 6vw 4rem;font-size:.8rem;color:var(--texto-suave);}
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><strong>meráki</strong></a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="eyebrow">ARKHÉ · Solicitação de Consulta</div>
+  <h1>Solicitar Eixo</h1>
+  <div class="preco-tag">Eixo · sob consulta</div>
+  <p>Consolidação da identidade simbólica — nível avançado da escada, construído sob medida. Preencha este formulário para que a proposta de Eixo seja construída sob medida para a sua situação — entramos em contato por WhatsApp com os próximos passos.</p>
+</section>
+
+
+<main>
+  <form action="https://formspree.io/f/mjgnvbrb" method="POST">
+    <input type="hidden" name="produto" value="Eixo">
+
+    <div class="bloco">
+      <div class="bloco-titulo">Identificação</div>
+      <div class="campo">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="duas-colunas">
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="campo">
+          <label for="whatsapp">WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+        </div>
+      </div>
+      <div class="campo">
+        <label>Você já é cliente ARKHÉ?</label>
+        <div class="radio-item"><input type="radio" id="cliente_sim" name="cliente_anterior" value="Sim, já comprei antes"><label for="cliente_sim" style="margin:0;">Sim, já comprei antes</label></div>
+        <div class="radio-item"><input type="radio" id="cliente_nao" name="cliente_anterior" value="Não, é minha primeira vez"><label for="cliente_nao" style="margin:0;">Não, é minha primeira vez</label></div>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-titulo">Dados de nascimento</div>
+      <div class="duas-colunas">
+        <div class="campo">
+          <label for="data_nascimento">Data de nascimento</label>
+          <input type="date" id="data_nascimento" name="data_nascimento" required>
+        </div>
+        <div class="campo">
+          <label for="hora_nascimento">Hora de nascimento</label>
+          <input type="time" id="hora_nascimento" name="hora_nascimento">
+          <span class="aux">Se não souber a hora exata, deixe em branco — ajustamos a leitura.</span>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="local_nascimento">Cidade e estado (ou país) de nascimento</label>
+        <input type="text" id="local_nascimento" name="local_nascimento" required>
+      </div>
+      <div class="campo">
+        <label for="fonte_horario">Como você confirma sua hora de nascimento?</label>
+        <select id="fonte_horario" name="fonte_horario">
+          <option value="">Selecione</option>
+          <option value="Certidão de nascimento">Certidão de nascimento</option>
+          <option value="Relato familiar">Relato familiar (pais/parentes)</option>
+          <option value="Aproximada">Aproximada, não tenho certeza</option>
+          <option value="Não sei">Não sei</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-titulo">A questão central</div>
+      <div class="campo">
+        <label for="questao">Qual é a questão, fase ou tema real que você quer investigar</label>
+        <textarea id="questao" name="questao" required placeholder="Quanto mais específico, mais precisa a leitura consegue ser."></textarea>
+      </div>
+      <div class="campo">
+        <label>Áreas de interesse adicionais (marque quantas fizerem sentido)</label>
+        <div class="checkbox-grid">
+          <div class="checkbox-item"><input type="checkbox" id="area1" name="areas" value="Relacionamentos"><label for="area1">Relacionamentos</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="area2" name="areas" value="Carreira e vocação"><label for="area2">Carreira e vocação</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="area3" name="areas" value="Finanças"><label for="area3">Finanças</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="area4" name="areas" value="Saúde emocional"><label for="area4">Saúde emocional</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="area5" name="areas" value="Espiritualidade e propósito"><label for="area5">Espiritualidade e propósito</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="area6" name="areas" value="Família e ancestralidade"><label for="area6">Família e ancestralidade</label></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-titulo">Se a leitura envolve outra pessoa</div>
+      <p style="color:var(--texto-suave);font-size:.9rem;margin-top:0;">Preencha apenas se a questão envolve diretamente um relacionamento específico e você quer que essa pessoa entre na leitura.</p>
+      <div class="secao-condicional">
+        <div class="campo">
+          <label for="nome_outra_pessoa">Nome da outra pessoa</label>
+          <input type="text" id="nome_outra_pessoa" name="nome_outra_pessoa">
+        </div>
+        <div class="duas-colunas">
+          <div class="campo">
+            <label for="data_nascimento_outra">Data de nascimento</label>
+            <input type="date" id="data_nascimento_outra" name="data_nascimento_outra">
+          </div>
+          <div class="campo">
+            <label for="hora_nascimento_outra">Hora de nascimento</label>
+            <input type="time" id="hora_nascimento_outra" name="hora_nascimento_outra">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="local_nascimento_outra">Cidade e estado de nascimento</label>
+          <input type="text" id="local_nascimento_outra" name="local_nascimento_outra">
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <div class="bloco-titulo">Complementar</div>
+      
+      <div class="campo">
+        <label for="observacoes">Observações adicionais</label>
+        <textarea id="observacoes" name="observacoes" placeholder="Qualquer contexto que ajude na construção da leitura."></textarea>
+      </div>
+    </div>
+
+    <button type="submit">Solicitar minha consulta</button>
+    <p class="form-nota">Seus dados chegam direto por e-mail e não ficam públicos em nenhum lugar. Entramos em contato por WhatsApp em até 2 dias úteis com a proposta.</p>
+  </form>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="name">Gia Pànta Meráki</p>
+      <p class="greek">για πάντα μεράκι</p>
+    </div>
+    <div class="footer-links">
+      <a href="sobre.html">sobre</a>
+      <a href="arkhe.html">arkhé</a>
+      <a href="tarot.html">tarô</a>
+      <a href="atlas-simbolos.html">atlas</a>
+      <a href="diagnostico-simbolico.html">diagnóstico</a>
+      <a href="arquivo.html">arquivo arkhé</a>
+      <a href="depoimentos.html">depoimentos</a>
+      <a href="vestigios.html">vestígios</a>
+      <a href="contato.html">contato</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
