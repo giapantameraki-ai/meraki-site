@@ -447,3 +447,37 @@ h1 {
 }
 .vestigio-voltar:hover { color: var(--gold); }
 
+/* ===== Imagem editorial: esfumaçado nas bordas + zoom lento (Ken Burns sutil) ===== */
+.edge-fade-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  line-height: 0;
+}
+.edge-fade-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: kenburns-slow 32s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.edge-fade-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: var(--panel);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 55%, black 100%);
+          mask-image: radial-gradient(ellipse at center, transparent 55%, black 100%);
+}
+@keyframes kenburns-slow {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .edge-fade-frame img { animation: none; }
+}
+
+
