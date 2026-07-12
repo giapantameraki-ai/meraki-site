@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: giapantameraki-ai/meraki-site
+  branch: main
+  base_url: https://giapantameraki.com.br
+  auth_endpoint: api/auth
+
+publish_mode: simple
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "vestigios"
+    label: "Vestígios"
+    label_singular: "Vestígio"
+    folder: "vestigios"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "D [de] MMMM [de] YYYY", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true }
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options: ["carta diária", "reflexão", "depoimento"]
+        default: "reflexão"
+      - { label: "Resumo (1–2 linhas para a listagem)", name: "resumo", widget: "text" }
+      - { label: "Corpo do texto", name: "corpo", widget: "markdown", buttons: ["bold", "italic", "quote"], editor_components: [] }
+
+  - name: "arquivo"
+    label: "Arquivo ARKHÉ"
+    label_singular: "Entrada do Arquivo"
+    folder: "arquivo"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "D [de] MMMM [de] YYYY", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true }
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options: ["ensaio", "mitologia", "método", "estudo"]
+        default: "ensaio"
+      - { label: "Resumo (1–2 linhas para a listagem)", name: "resumo", widget: "text" }
+      - { label: "Corpo do texto", name: "corpo", widget: "markdown", buttons: ["bold", "italic", "quote"], editor_components: [] }
