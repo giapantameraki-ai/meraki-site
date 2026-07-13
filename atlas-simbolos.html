@@ -40,14 +40,15 @@
   body{margin:0;background:var(--preto-marmore);color:var(--texto);font-family:'Raleway',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden;}
   h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.01em;}
 
-  .hero{padding:64px 24px 44px;max-width:900px;margin:0 auto;position:relative;text-align:center;}
+  .hero{padding:64px 24px 44px;position:relative;text-align:center;}
   .hero::before{content:"";position:absolute;bottom:0;left:50%;width:100vw;margin-left:-50vw;border-bottom:1px solid var(--linha);}
   .hero .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.4rem;}
   .hero h1{font-size:32px;font-style:italic;margin:0 0 1.6rem;}
-  .hero p{font-size:14px;color:var(--texto-suave);max-width:640px;font-weight:300;margin-left:auto;margin-right:auto;line-height:1.8;}
+  .hero p{font-size:14px;color:var(--texto-suave);font-weight:300;line-height:1.8;padding-left:max(0px,calc(50% - 320px));padding-right:max(0px,calc(50% - 320px));}
   .frase-impacto{
     font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;
-    color:var(--dourado);max-width:680px;margin:2rem auto 0;padding-top:1.8rem;
+    color:var(--dourado);margin-top:2rem;padding-top:1.8rem;
+    padding-left:max(0px,calc(50% - 340px));padding-right:max(0px,calc(50% - 340px));
     border-top:1px solid var(--linha);font-weight:500;line-height:1.4;
   }
   .legenda-pilares{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem 1.8rem;margin-top:2.6rem;}
@@ -60,7 +61,8 @@
   .ponto.teologia{background:var(--pergaminho);}
   .ponto.mitologia{background:var(--terracota);}
 
-  .atlas-grid{max-width:1100px;margin:0 auto;padding:5rem 6vw 8rem;display:grid;gap:1.6rem;}
+  .atlas-grid-wrap{display:flex;justify-content:center;width:100%;}
+  .atlas-grid{max-width:1100px;width:100%;padding:5rem 6vw 8rem;display:grid;gap:1.6rem;}
   .verbete{border:1px solid var(--linha);border-radius:2px;background:linear-gradient(180deg,var(--preto-marmore-2),var(--preto-marmore));overflow:hidden;}
   .verbete summary{list-style:none;cursor:pointer;padding:2.2rem 2.4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
   .verbete summary::-webkit-details-marker{display:none;}
@@ -92,11 +94,13 @@
   .pilar[data-pilar="mitologia"] .pilar-nome{color:var(--terracota);}
   .pilar p{font-size:.96rem;color:var(--texto-suave);margin:0 0 1rem;}
 
-  .imagem-verbete-wrap{max-width:340px;margin:1.6rem auto .4rem;}
+  .imagem-verbete-flex{display:flex;justify-content:center;}
+  .imagem-verbete-wrap{max-width:340px;width:100%;margin:1.6rem 0 .4rem;}
   .imagem-verbete-wrap .edge-fade-frame{border-radius:2px;}
   .imagem-verbete-wrap img{aspect-ratio:4/5;object-fit:cover;}
 
-  .nota-arquitetura{max-width:900px;margin:0 auto;padding:0 6vw 6rem;font-size:.85rem;color:var(--texto-suave);position:relative;padding-top:3rem;}
+  .nota-arquitetura-wrap{display:flex;justify-content:center;width:100%;}
+  .nota-arquitetura{max-width:900px;width:100%;padding:0 6vw 6rem;font-size:.85rem;color:var(--texto-suave);position:relative;padding-top:3rem;box-sizing:border-box;}
   .nota-arquitetura::before{content:"";position:absolute;top:0;left:50%;width:100vw;margin-left:-50vw;border-top:1px solid var(--linha);}
 </style>
 </head>
@@ -135,6 +139,7 @@
   </div>
 </section>
 
+<div class="atlas-grid-wrap">
 <main class="atlas-grid">
 
   <details class="verbete" open>
@@ -150,9 +155,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/serpente.jpg" alt="A Serpente — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/serpente.jpg" alt="A Serpente — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -207,9 +214,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/espelho.jpg" alt="O Espelho — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/espelho.jpg" alt="O Espelho — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -264,9 +273,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/labirinto.jpg" alt="O Labirinto — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/labirinto.jpg" alt="O Labirinto — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -321,9 +332,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/arvore.jpg" alt="A Árvore — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/arvore.jpg" alt="A Árvore — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -378,9 +391,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/arvore-da-vida.jpg" alt="A Árvore da Vida — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/arvore-da-vida.jpg" alt="A Árvore da Vida — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -435,9 +450,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/coroa.jpg" alt="A Coroa — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/coroa.jpg" alt="A Coroa — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -492,9 +509,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/chave.jpg" alt="A Chave — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/chave.jpg" alt="A Chave — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -549,9 +568,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/mascara.jpg" alt="A Máscara — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/mascara.jpg" alt="A Máscara — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -606,9 +627,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/balanca.jpg" alt="A Balança — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/balanca.jpg" alt="A Balança — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -663,9 +686,11 @@
     </summary>
     <div class="verbete-corpo">
       
-      <div class="imagem-verbete-wrap">
-        <div class="edge-fade-frame">
-          <img src="images/fogo.jpg" alt="O Fogo — ilustração ARKHÉ" loading="lazy">
+      <div class="imagem-verbete-flex">
+        <div class="imagem-verbete-wrap">
+          <div class="edge-fade-frame">
+            <img src="images/fogo.jpg" alt="O Fogo — ilustração ARKHÉ" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="origem-bloco">
@@ -707,10 +732,13 @@
     </div>
   </details>
 </main>
+</div>
 
+<div class="nota-arquitetura-wrap">
 <p class="nota-arquitetura">
   Este atlas cresce por verbete. Cada símbolo novo segue a mesma estrutura — origem, seis portas de leitura, prompt de imagem — e pode ser lido isolado ou em conjunto com os demais. Dez verbetes já publicados aqui: Serpente, Espelho, Labirinto, Árvore, Árvore da Vida, Coroa, Chave, Máscara, Balança, Fogo. Candidatos naturais para a próxima leva: o Véu, a Torre, o Fio, a Roda e o Trono.
 </p>
+</div>
 
 
 <svg width="0" height="0" style="position:absolute">
