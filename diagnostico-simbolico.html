@@ -29,7 +29,8 @@
   body{margin:0;background:var(--preto);color:var(--texto);font-family:'Raleway',sans-serif;font-weight:300;line-height:1.75;}
   h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;}
 
-  .hero{padding:8rem 6vw 5rem;max-width:820px;margin:0 auto;text-align:center;border-bottom:1px solid var(--linha);}
+  .hero{padding:8rem 6vw 5rem;max-width:820px;margin:0 auto;text-align:center;position:relative;}
+  .hero::before{content:"";position:absolute;bottom:0;left:50%;width:100vw;margin-left:-50vw;border-bottom:1px solid var(--linha);}
   .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.6rem;}
   .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);font-style:italic;margin:0 0 1.4rem;}
   .hero .gancho{font-size:1.25rem;color:var(--texto-suave);max-width:600px;margin:0 auto 2.4rem;}
@@ -38,7 +39,9 @@
   .sis .pt{width:6px;height:6px;border-radius:50%;background:var(--dourado);display:inline-block;}
   .sis.tarot .pt{background:var(--violeta);}
 
-  section{max-width:760px;margin:0 auto;padding:4.5rem 6vw;border-bottom:1px solid var(--linha);}
+  section{max-width:760px;margin:0 auto;padding:4.5rem 6vw;position:relative;}
+  section:not(.hero)::after{content:"";position:absolute;bottom:0;left:50%;width:100vw;margin-left:-50vw;border-bottom:1px solid var(--linha);}
+  section:last-of-type::after{display:none;}
   section h2{font-size:2rem;font-style:italic;margin:0 0 1.6rem;}
   section p{color:var(--texto-suave);font-size:1.02rem;}
 

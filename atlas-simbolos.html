@@ -39,7 +39,8 @@
   body{margin:0;background:var(--preto-marmore);color:var(--texto);font-family:'Raleway',sans-serif;font-weight:300;line-height:1.75;}
   h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:.01em;}
 
-  .hero{padding:9rem 6vw 6rem;max-width:900px;margin:0 auto;border-bottom:1px solid var(--linha);}
+  .hero{padding:9rem 6vw 6rem;max-width:900px;margin:0 auto;position:relative;}
+  .hero::before{content:"";position:absolute;bottom:0;left:50%;width:100vw;margin-left:-50vw;border-bottom:1px solid var(--linha);}
   .hero .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.4rem;}
   .hero h1{font-size:clamp(2.4rem,5vw,4rem);font-style:italic;margin:0 0 1.6rem;}
   .hero p{font-size:1.15rem;color:var(--texto-suave);max-width:640px;font-weight:300;margin-left:auto;margin-right:auto;}
@@ -94,7 +95,8 @@
   .imagem-verbete-wrap .edge-fade-frame{border-radius:2px;}
   .imagem-verbete-wrap img{aspect-ratio:4/5;object-fit:cover;}
 
-  .nota-arquitetura{max-width:900px;margin:0 auto;padding:0 6vw 6rem;font-size:.85rem;color:var(--texto-suave);border-top:1px solid var(--linha);padding-top:3rem;}
+  .nota-arquitetura{max-width:900px;margin:0 auto;padding:0 6vw 6rem;font-size:.85rem;color:var(--texto-suave);position:relative;padding-top:3rem;}
+  .nota-arquitetura::before{content:"";position:absolute;top:0;left:50%;width:100vw;margin-left:-50vw;border-top:1px solid var(--linha);}
 </style>
 </head>
 <body>

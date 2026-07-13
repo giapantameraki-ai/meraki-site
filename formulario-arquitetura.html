@@ -24,7 +24,9 @@
   .hero .preco-tag{font-size:.85rem;letter-spacing:.06em;color:var(--dourado);margin-bottom:1.4rem;}
   .hero p{color:var(--texto-suave);max-width:560px;margin:0 auto;font-size:1.02rem;}
 
-  main{max-width:640px;margin:0 auto;padding:2rem 6vw 6rem;}
+  main{max-width:640px;margin:0 auto;padding:3rem 6vw 6rem;position:relative;}
+  main::before{content:"";position:absolute;top:0;left:50%;width:100vw;margin-left:-50vw;border-top:1px solid var(--linha);}
+  main > form > .bloco:first-of-type{margin-top:.5rem;}
 
   .bloco{margin-bottom:3rem;}
   .bloco-titulo{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado);margin-bottom:1.6rem;padding-bottom:.8rem;border-bottom:1px solid var(--linha);}
@@ -65,9 +67,11 @@
   }
   button[type="submit"]:hover{opacity:.9;}
   .form-nota{font-size:.82rem;color:var(--texto-suave);text-align:center;margin-top:1.4rem;}
+  .aviso-sigilo{font-size:.78rem;color:var(--texto-suave);text-align:center;padding:.8rem 1.2rem;margin:0 0 2.2rem;border:1px solid var(--linha);border-radius:2px;background:rgba(201,163,94,.04);}
 
   .cta-pagamento{display:inline-block;margin-top:1.4rem;padding:1rem 2.6rem;background:var(--dourado);color:var(--preto);text-decoration:none;font-weight:600;letter-spacing:.04em;border-radius:2px;font-size:.9rem;text-transform:uppercase;}
-  .secao-pagamento{max-width:640px;margin:0 auto;padding:0 6vw 3rem;text-align:center;border-bottom:1px solid var(--linha);}
+  .secao-pagamento{max-width:640px;margin:0 auto;padding:2.6rem 6vw 3.2rem;text-align:center;position:relative;}
+  .secao-pagamento::after{content:"";position:absolute;bottom:0;left:50%;width:100vw;margin-left:-50vw;border-bottom:1px solid var(--linha);}
   .secao-pagamento .preco-grande{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--dourado);font-style:italic;margin:.6rem 0 0;}
   .secao-pagamento .preco-nota{font-size:.85rem;color:var(--texto-suave);margin-top:1.6rem;}
 
@@ -98,6 +102,7 @@
 </section>
 
 <main>
+  <p class="aviso-sigilo">Seus dados são usados exclusivamente para construir sua leitura e não são compartilhados com terceiros.</p>
   <form action="https://formspree.io/f/mjgnvbrb" method="POST">
     <input type="hidden" name="produto" value="Arquitetura">
 
@@ -168,6 +173,10 @@
           <div class="checkbox-item"><input type="checkbox" id="area4" name="areas" value="Saúde emocional"><label for="area4">Saúde emocional</label></div>
           <div class="checkbox-item"><input type="checkbox" id="area5" name="areas" value="Espiritualidade e propósito"><label for="area5">Espiritualidade e propósito</label></div>
           <div class="checkbox-item"><input type="checkbox" id="area6" name="areas" value="Família e ancestralidade"><label for="area6">Família e ancestralidade</label></div>
+        </div>
+        <div class="campo" style="margin-top:1rem;">
+          <label for="area_outro">Nenhuma dessas se aplica? Descreva a sua área (opcional)</label>
+          <input type="text" id="area_outro" name="area_outro" placeholder="Escreva aqui se sua questão não se encaixa nas opções acima">
         </div>
       </div>
     </div>
