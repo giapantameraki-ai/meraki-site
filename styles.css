@@ -44,9 +44,8 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 .wrap {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding-left: max(24px, calc(50% - 380px));
+  padding-right: max(24px, calc(50% - 380px));
 }
 
 /* ---- Nav ---- */
@@ -54,9 +53,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 0.5px solid var(--border);
 }
 .nav-inner {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 22px 24px;
+  padding: 22px max(24px, calc(50% - 380px));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,17 +104,19 @@ h1 {
   font-style: italic;
   color: var(--text-primary);
   line-height: 1.3;
-  margin: 0 auto 18px;
-  max-width: 520px;
+  margin: 0 0 18px;
+  padding-left: max(0px, calc(50% - 260px));
+  padding-right: max(0px, calc(50% - 260px));
+  box-sizing: border-box;
 }
-.hero h1 { font-size: 32px; }
+.hero h1 { font-size: 32px; text-align: center; }
 
 .lede {
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.8;
-  max-width: 480px;
-  margin: 0 auto;
+  padding-left: max(0px, calc(50% - 240px));
+  padding-right: max(0px, calc(50% - 240px));
 }
 
 /* ---- Sections ---- */
@@ -221,8 +220,9 @@ h1 {
   font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.75;
-  max-width: 420px;
-  margin: 0 auto 24px;
+  margin-bottom: 24px;
+  padding-left: max(0px, calc(50% - 210px));
+  padding-right: max(0px, calc(50% - 210px));
 }
 
 /* ---- Footer ---- */
