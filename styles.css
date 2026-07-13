@@ -64,8 +64,8 @@ img { max-width: 100%; display: block; }
 }
 .nav-brand {
   font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.18em;
+  font-size: 15px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-tertiary);
 }
@@ -205,6 +205,15 @@ h1 {
 .cta-block {
   text-align: center;
   padding: 40px 0 56px;
+  position: relative;
+}
+.cta-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   border-top: 0.5px solid var(--border);
 }
 .cta-note {
@@ -247,8 +256,17 @@ h1 {
   gap: 32px;
   flex-wrap: wrap;
   padding-top: 28px;
-  border-top: 0.5px solid var(--border);
   margin-top: 36px;
+  position: relative;
+}
+.facts::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  border-top: 0.5px solid var(--border);
 }
 .fact-label {
   font-size: 11px;
@@ -272,6 +290,15 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
+  position: relative;
+}
+.authoria::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   border-bottom: 0.5px solid var(--border);
 }
 .authoria .name { font-family: var(--serif); font-size: 17px; color: var(--text-primary); margin: 0 0 6px; }
@@ -326,10 +353,9 @@ h1 {
 
 /* ---- Tarô — identidade própria ---- */
 .tarot-page h1 {
-  font-family: var(--serif-tarot);
   letter-spacing: 0.01em;
 }
-.tarot-page .card-title { font-family: var(--serif-tarot); font-size: 16px; letter-spacing: 0.01em; }
+.tarot-page .card-title { font-size: 16px; letter-spacing: 0.01em; }
 .tarot-page .btn.violet { letter-spacing: 0.04em; }
 
 .glyph-divider {
@@ -361,9 +387,18 @@ h1 {
   margin: 0;
 }
 .testimonial-form {
-  border-top: 0.5px solid var(--border);
+  position: relative;
   padding-top: 32px;
   margin-top: 8px;
+}
+.testimonial-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  border-top: 0.5px solid var(--border);
 }/* ---- Depoimentos — variação por origem ---- */
 .testimonial.arkhe {
   border-left: 2px solid var(--gold);
