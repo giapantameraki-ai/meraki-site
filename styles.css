@@ -77,6 +77,7 @@ img { max-width: 100%; display: block; }
 }
 .nav-links a {
   color: var(--text-secondary);
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
