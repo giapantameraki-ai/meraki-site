@@ -43,7 +43,7 @@
   section:not(.hero)::after{content:"";position:absolute;bottom:0;left:50%;width:100vw;margin-left:-50vw;border-bottom:1px solid var(--linha);}
   section:last-of-type::after{display:none;}
   section h2{font-size:2rem;font-style:italic;margin:0 0 1.6rem;}
-  section p{color:var(--texto-suave);font-size:1.02rem;}
+  section p{color:var(--texto-suave);font-size:1.02rem;text-align:justify;}
 
   .entrega-lista{list-style:none;padding:0;margin:0;display:grid;gap:1.4rem;}
   .entrega-lista li{padding-left:2rem;position:relative;color:var(--texto-suave);}
@@ -61,7 +61,7 @@
   .coluna{text-align:center;padding:2rem 1.6rem;border:1px solid var(--linha);border-radius:2px;border-top:2px solid var(--dourado);background:rgba(201,163,94,.04);}
   .coluna.nao{border-top:2px solid var(--terracota);background:rgba(155,91,74,.06);}
   .coluna h3{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.4rem;color:var(--dourado);}
-  .coluna.nao h3{color:var(--terracota);}
+  .coluna.nao h3{color:#D9906F;}
   .coluna ul{list-style:none;padding:0;margin:0;display:grid;gap:1rem;}
   .coluna li{font-size:.95rem;color:var(--texto-suave);line-height:1.55;}
 
@@ -93,7 +93,7 @@
   .faq-item{border-top:1px solid var(--linha);padding:1.6rem 0;}
   .faq-item summary{cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--texto);list-style:none;}
   .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item p{margin:.9rem 0 0;font-size:.95rem;}
+  .faq-item p{margin:.9rem 0 0;font-size:.95rem;text-align:justify;}
 
   footer{text-align:center;padding:3rem 6vw 5rem;font-size:.8rem;color:var(--texto-suave);}
 </style>
@@ -160,7 +160,7 @@
     </div>
     <div class="passo">
       <div class="passo-num">3</div>
-      <div class="passo-txt"><b>Você recebe o documento</b><p>PDF de 18 a 24 páginas, identidade visual ARKHÉ, entregue em até 7 dias úteis.</p></div>
+      <div class="passo-txt"><b>Você recebe o documento</b><p>PDF com identidade visual ARKHÉ, entregue em até 7 dias úteis.</p></div>
     </div>
   </div>
 </section>
@@ -195,9 +195,9 @@
   <p class="detalhes">Após o pagamento, você recebe o formulário para enviar seus dados de nascimento e a questão que quer investigar.</p>
 </section>
 
-<section>
+<section style="text-align:center;">
   <h2>Seus dados para a leitura</h2>
-  <p style="margin-bottom:2rem;">Preencha depois de confirmar o pagamento. Quanto mais específica a questão, mais precisa a tiragem de Tarô e a leitura cabalística conseguem ser.</p>
+  <p style="margin:0 auto 2rem;max-width:520px;text-align:center;">Preencha depois de confirmar o pagamento. Quanto mais específica a questão, mais precisa a tiragem de Tarô e a leitura cabalística conseguem ser.</p>
 
   <form class="form-diagnostico" action="https://formspree.io/f/mjgnvbrb" method="POST">
     <div class="campo">
