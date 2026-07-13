@@ -33,6 +33,26 @@ collections:
       - { label: "Resumo (1–2 linhas para a listagem)", name: "resumo", widget: "text" }
       - { label: "Corpo do texto", name: "corpo", widget: "markdown", buttons: ["bold", "italic", "quote"], editor_components: [] }
 
+  - name: "cartas"
+    label: "Carta ARKHÉ"
+    label_singular: "Carta"
+    folder: "cartas"
+    create: true
+    delete: true
+    slug: "{{numero}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    summary: "Carta ARKHÉ nº {{numero}} — {{date}}"
+    sortable_fields: ["numero", "date", "title"]
+    fields:
+      - { label: "Número da carta (ex: 1, 2, 3...)", name: "numero", widget: "number", value_type: "int" }
+      - { label: "Título", name: "title", widget: "string", hint: "Ex: Carta ARKHÉ nº 1 — [gancho curto da semana]" }
+      - { label: "Data", name: "date", widget: "datetime", format: "D [de] MMMM [de] YYYY", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true }
+      - { label: "Trânsito / tema da semana (aparece como etiqueta na listagem)", name: "categoria", widget: "string" }
+      - { label: "Resumo (1–2 linhas para a listagem)", name: "resumo", widget: "text" }
+      - { label: "Corpo da carta (trânsito, símbolo do Atlas, reflexão e CTA — tudo em parágrafos aqui)", name: "corpo", widget: "markdown", buttons: ["bold", "italic", "quote"], editor_components: [] }
+
   - name: "arquivo"
     label: "Arquivo ARKHÉ"
     label_singular: "Entrada do Arquivo"
