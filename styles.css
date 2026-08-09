@@ -433,6 +433,27 @@ h1 {
 }
 .vestigio-item:hover { opacity: 0.8; }
 .vestigio-item:first-child { padding-top: 0; }
+.vestigio-item.tem-imagem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.vestigio-thumb {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: #0F0E0A;
+}
+.vestigio-item-texto { flex: 1; min-width: 0; }
+.vestigio-article-image {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto 32px;
+  border-radius: 6px;
+}
 .vestigio-meta {
   display: flex;
   align-items: center;
