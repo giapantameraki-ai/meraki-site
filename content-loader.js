@@ -82,13 +82,16 @@ async function renderListing(folder, containerSelector, basePath) {
     container.innerHTML = entries
       .map(
         (e) => `
-        <a href="${basePath}/artigo.html?slug=${encodeURIComponent(e.slug)}" class="vestigio-item">
-          <div class="vestigio-meta">
-            <span class="vestigio-categoria gold">${e.categoria || ""}</span>
-            <span class="vestigio-data">${e.date || ""}</span>
+        <a href="${basePath}/artigo.html?slug=${encodeURIComponent(e.slug)}" class="vestigio-item${e.imagem ? " tem-imagem" : ""}">
+          ${e.imagem ? `<img src="${e.imagem}" alt="${e.title || ""}" class="vestigio-thumb" loading="lazy">` : ""}
+          <div class="vestigio-item-texto">
+            <div class="vestigio-meta">
+              <span class="vestigio-categoria gold">${e.categoria || ""}</span>
+              <span class="vestigio-data">${e.date || ""}</span>
+            </div>
+            <h2>${e.title || "Sem título"}</h2>
+            <p class="vestigio-resumo">${e.resumo || ""}</p>
           </div>
-          <h2>${e.title || "Sem título"}</h2>
-          <p class="vestigio-resumo">${e.resumo || ""}</p>
         </a>`
       )
       .join("\n");
@@ -127,6 +130,17 @@ async function renderArticle(folder) {
     root.querySelector("[data-data]").textContent = data.date || "";
     root.querySelector("[data-titulo]").textContent = data.title || "";
     root.querySelector("[data-corpo]").innerHTML = renderMarkdown(data.corpo || "");
+
+    const imgEl = root.querySelector("[data-imagem]");
+    if (imgEl) {
+      if (data.imagem) {
+        imgEl.src = data.imagem;
+        imgEl.alt = data.title || "";
+        imgEl.style.display = "";
+      } else {
+        imgEl.style.display = "none";
+      }
+    }
   } catch (err) {
     root.innerHTML = `<p class="vestigio-vazio">Não foi possível carregar este texto.</p>`;
     console.error(err);
