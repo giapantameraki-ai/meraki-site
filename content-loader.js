@@ -8,6 +8,28 @@
 const CONTENT_REPO = "giapantameraki-ai/meraki-site";
 const CONTENT_BRANCH = "main";
 
+const MESES_PT = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+
+// Converte "9 de agosto de 2026" em Date. Retorna null se não reconhecer o formato
+// (nesse caso a entrada é tratada como já publicada, pra nunca esconder conteúdo por engano).
+function parseDataPt(dateStr) {
+  if (!dateStr) return null;
+  const m = String(dateStr).toLowerCase().match(/(\d{1,2})\s+de\s+([a-zçã]+)\s+de\s+(\d{4})/);
+  if (!m) return null;
+  const dia = parseInt(m[1], 10);
+  const mesIdx = MESES_PT.indexOf(m[2]);
+  const ano = parseInt(m[3], 10);
+  if (mesIdx === -1) return null;
+  return new Date(ano, mesIdx, dia, 9, 5, 0); // 09h05 = mesmo horário do post no Instagram
+}
+
+// Uma entrada está publicada quando a data dela já chegou (ou não tem data reconhecível).
+function jaPublicado(dateStr) {
+  const d = parseDataPt(dateStr);
+  if (!d) return true;
+  return d.getTime() <= Date.now();
+}
+
 async function listContentFiles(folder) {
   const url = `https://api.github.com/repos/${CONTENT_REPO}/contents/${folder}?ref=${CONTENT_BRANCH}`;
   const res = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
@@ -77,9 +99,16 @@ async function renderListing(folder, containerSelector, basePath) {
       })
     );
 
-    entries.sort((a, b) => formatDateSort(b.date) - formatDateSort(a.date));
+    const publicados = entries.filter((e) => jaPublicado(e.date));
 
-    container.innerHTML = entries
+    if (publicados.length === 0) {
+      container.innerHTML = `<p class="vestigio-vazio">Nenhum texto publicado ainda. Em breve, novos registros aparecem aqui.</p>`;
+      return;
+    }
+
+    publicados.sort((a, b) => formatDateSort(b.date) - formatDateSort(a.date));
+
+    container.innerHTML = publicados
       .map(
         (e) => `
         <a href="${basePath}/artigo.html?slug=${encodeURIComponent(e.slug)}" class="vestigio-item${e.imagem ? " tem-imagem" : ""}">
@@ -121,6 +150,11 @@ async function renderArticle(folder) {
     const res = await fetch(url);
     if (!res.ok) throw new Error("not found");
     const data = await res.json();
+
+    if (!jaPublicado(data.date)) {
+      root.innerHTML = `<p class="vestigio-vazio">Este texto ainda não foi publicado. Volte em ${data.date}.</p>`;
+      return;
+    }
 
     document.title = `${data.title} — Gia Pànta Meráki`;
     const metaDesc = document.querySelector('meta[name="description"]');
