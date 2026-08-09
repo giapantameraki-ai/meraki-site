@@ -500,8 +500,9 @@ h1 {
 }
 .vestigio-article .vestigio-meta { margin: 0 0 32px; }
 .vestigio-article .prose p {
-  max-width: 620px;
-  font-size: 14.5px;
+  max-width: 640px;
+  font-size: 17px;
+  line-height: 1.8;
 }
 .vestigio-voltar {
   display: inline-flex;
