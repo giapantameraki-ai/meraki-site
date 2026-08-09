@@ -47,6 +47,7 @@ collections:
     sortable_fields: ["numero", "date", "title"]
     fields:
       - { label: "Número da carta (ex: 1, 2, 3...)", name: "numero", widget: "number", value_type: "int" }
+      - { label: "Imagem", name: "imagem", widget: "image", required: false, hint: "Imagem do símbolo desta carta (mármore preto + traço dourado)" }
       - { label: "Título", name: "title", widget: "string", hint: "Ex: Carta ARKHÉ nº 1 — [gancho curto da semana]" }
       - { label: "Data", name: "date", widget: "datetime", format: "D [de] MMMM [de] YYYY", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true }
       - { label: "Trânsito / tema da semana (aparece como etiqueta na listagem)", name: "categoria", widget: "string" }
