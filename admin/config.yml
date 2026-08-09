@@ -24,6 +24,7 @@ collections:
     sortable_fields: ["date", "title"]
     fields:
       - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagem", name: "imagem", widget: "image", required: false }
       - { label: "Data", name: "date", widget: "datetime", format: "D [de] MMMM [de] YYYY", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true }
       - label: "Categoria"
         name: "categoria"
@@ -68,6 +69,7 @@ collections:
     sortable_fields: ["date", "title"]
     fields:
       - { label: "Título", name: "title", widget: "string" }
+      - { label: "Imagem", name: "imagem", widget: "image", required: false }
       - { label: "Data", name: "date", widget: "datetime", format: "D [de] MMMM [de] YYYY", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true }
       - label: "Categoria"
         name: "categoria"
